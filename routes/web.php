@@ -20,4 +20,4 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return view('test');
 });
-
+/** this is for project */
