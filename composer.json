@@ -6,9 +6,11 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "bensampo/laravel-enum": "^3.3",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "kouja/project-assistant": "^0.0.5",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5"
     },
