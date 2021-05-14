@@ -16,7 +16,7 @@ class CreateCartsTable extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            $table->integer('qty')->default(1);
+            $table->unsignedInteger('qty')->default(1);
             $table->timestamps();
             $table->softDeletes();
         });
