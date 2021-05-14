@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductsForeignkeyTable extends Migration
+class CreateProductsForeignKeys extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class CreateProductsForeignkeyTable extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->foreignId('categories_id')->constrained();
+            $table->foreignId('category_id')->constrained();
         });
     }
 
@@ -25,6 +25,6 @@ class CreateProductsForeignkeyTable extends Migration
      */
     public function down()
     {
-        
+
     }
 }

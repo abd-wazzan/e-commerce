@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductsTable extends Migration
+class CreateCategorySpecsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,10 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('category_specs', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description');
-            $table->unsignedDouble('price');
+            $table->boolean('has_multiple_option')->default(false);
             $table->timestamps();
             $table->softDeletes();
         });
@@ -32,9 +31,7 @@ class CreateProductsTable extends Migration
     public function down()
     {
         DB::statement("SET foreign_key_checks=0");
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('category_specs');
         DB::statement("SET foreign_key_checks=1");
-      //////
-
     }
 }
