@@ -2,6 +2,8 @@
 
 namespace App\Models\Category;
 
+use App\Models\Product\ProductOption;
+use App\Models\Product\ProductSpec;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Kouja\ProjectAssistant\Bases\BaseModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -41,4 +43,15 @@ class CategoryOption extends BaseModel
     protected $casts = [
         'category_spec_id' => 'integer'
     ];
+
+    public function categorySpec()
+    {
+        return $this->belongsTo(CategorySpec::class);
+    }
+
+    public function productOptions()
+    {
+        return $this->hasMany(ProductOption::class);
+    }
+
 }

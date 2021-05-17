@@ -2,6 +2,7 @@
 
 namespace App\Models\Client;
 
+use App\Models\Product\Product;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Kouja\ProjectAssistant\Bases\BaseModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -47,4 +48,14 @@ class OrderDetail extends BaseModel
         'order_id' => 'integer',
         'product_id' => 'integer',
     ];
+
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }

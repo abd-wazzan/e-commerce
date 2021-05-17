@@ -2,6 +2,8 @@
 
 namespace App\Models\Product;
 
+use App\Models\Client\Cart;
+use App\Models\Client\OrderDetail;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Kouja\ProjectAssistant\Bases\BaseModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -43,4 +45,29 @@ class Product extends BaseModel
         'price' => 'double',
         'category_id' => 'integer',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
+
+    public function carts()
+    {
+        return $this->hasMany(Cart::class);
+    }
+
+    public function orderDetails()
+    {
+        return $this->hasMany(OrderDetail::class);
+    }
+
+    public function productSpecs()
+    {
+        return $this->hasMany(ProductSpec::class);
+    }
 }

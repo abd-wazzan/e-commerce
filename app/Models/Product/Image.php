@@ -39,4 +39,9 @@ class Image extends BaseModel
     protected $casts = [
         'product_id' => 'integer'
     ];
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }

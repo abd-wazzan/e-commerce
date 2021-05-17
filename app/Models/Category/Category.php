@@ -2,6 +2,7 @@
 
 namespace App\Models\Category;
 
+use App\Models\Product\Product;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Kouja\ProjectAssistant\Bases\BaseModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -41,4 +42,24 @@ class Category extends BaseModel
     protected $casts = [
         'category_id' => 'integer'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function categories()
+    {
+        return $this->hasMany(Category::class);
+    }
+
+    public function categorySpecs()
+    {
+        return $this->hasMany(CategorySpec::class);
+    }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

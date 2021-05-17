@@ -41,4 +41,14 @@ class Order extends BaseModel
         'value' => 'double',
         'user_id' => 'integer',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function orderDetails()
+    {
+        return $this->hasMany(OrderDetail::class);
+    }
 }
