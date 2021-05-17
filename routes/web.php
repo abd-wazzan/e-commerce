@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Kouja\ProjectAssistant\Helpers\ResponseHelper;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +20,9 @@ Route::get('/', function () {
 
 Route::get('/test', function () {
     return view('test');
+});
+
+Route::get('/user', function (Illuminate\Http\Request $request) {
+    return ResponseHelper::select($request->user());
 });
 /** this is for project */

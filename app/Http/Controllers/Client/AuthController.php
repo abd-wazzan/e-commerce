@@ -7,6 +7,7 @@ use App\Http\Requests\Client\Auth\SignInRequest;
 use App\Http\Requests\Client\Auth\SignUpRequest;
 use App\Models\Client\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Kouja\ProjectAssistant\Helpers\ResponseHelper;
 
 class AuthController extends Controller
@@ -33,7 +34,7 @@ class AuthController extends Controller
     }
 
     public function signIn(SignInRequest $request)
-    {
+    {   
         $userData=$request->validated();
         $signedUser=$this->users->login($userData);
         return (empty($signedUser)) ? ResponseHelper::DataNotFound('check your credential') : ResponseHelper::select($signedUser);
