@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCartsTable extends Migration
+class CreateOrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,9 @@ class CreateCartsTable extends Migration
      */
     public function up()
     {
-        Schema::create('carts', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('qty')->default(1);
+            $table->unsignedDouble('value');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,7 +30,7 @@ class CreateCartsTable extends Migration
     public function down()
     {
         DB::statement("SET foreign_key_checks=0");
-        Schema::dropIfExists('carts');
+        Schema::dropIfExists('orders');
         DB::statement("SET foreign_key_checks=1");
     }
 }

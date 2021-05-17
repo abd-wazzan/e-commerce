@@ -17,6 +17,15 @@ class CreateClientsForeignKeys extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('product_id')->constrained();
         });
+
+        Schema::table('orders', function (Blueprint $table) {
+            $table->foreignId('user_id')->constrained();
+        });
+
+        Schema::table('order_details', function (Blueprint $table) {
+            $table->foreignId('order_id')->constrained();
+            $table->foreignId('product_id')->constrained();
+        });
     }
 
     /**
