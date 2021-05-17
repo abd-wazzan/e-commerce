@@ -60,4 +60,26 @@ class RouteServiceProvider extends ServiceProvider
             return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
         });
     }
+
+
+    protected function mapAuthRoutes()
+    {
+        Route::prefix('auth')
+            //->middleware('api')
+            ->group(base_path('routes/Client/auth.php'));
+    }
+
+    protected function mapFileRoutes()
+    {
+        Route::prefix('file')
+            //->middleware('auth:api')
+            ->group(base_path('routes/Client/file.php'));
+    }
+
+    protected function mapUserRoutes()
+    {
+        Route::prefix('user')
+            //->middleware('api')
+            ->group(base_path('routes/Client/user.php'));
+    }
 }
