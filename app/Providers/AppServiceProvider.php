@@ -23,8 +23,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        \URL::forceScheme('https');
-        
         $this->loadMigrationsFrom([
             database_path().DIRECTORY_SEPARATOR.'migrations'.DIRECTORY_SEPARATOR.'Client',
             database_path().DIRECTORY_SEPARATOR.'migrations'.DIRECTORY_SEPARATOR.'Product',
