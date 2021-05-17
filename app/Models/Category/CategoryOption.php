@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Category;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Kouja\ProjectAssistant\Bases\BaseModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class CategoryOption extends BaseModel
 {
-    use HasFactory, Notifiable;
+    use HasFactory, SoftDeletes;
+
+    protected $table = 'category_options';
 
     /**
      * The attributes that are mass assignable.
@@ -18,8 +19,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
-        'password',
+        'category_spec_id',
     ];
 
     /**
@@ -28,8 +28,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password',
-        'remember_token',
+        'created_at',
+        'updated_at',
+        'deleted_at'
     ];
 
     /**
@@ -38,6 +39,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'category_spec_id' => 'integer'
     ];
 }
