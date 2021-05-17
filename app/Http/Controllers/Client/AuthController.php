@@ -34,10 +34,14 @@ class AuthController extends Controller
     }
 
     public function signIn(SignInRequest $request)
-    {   
+    {
         $userData=$request->validated();
-        $signedUser=$this->users->login($userData);
-        return (empty($signedUser)) ? ResponseHelper::DataNotFound('check your credential') : ResponseHelper::select($signedUser);
+        $signedUser = $this->users->loginUser($userData);
+        $signedUser['token'] = $signedUser->getRememberToken();
+        return (empty($signedUser)) ? back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ])
+        : ResponseHelper::select($signedUser);
     }
 
     public function logout(Request $request)

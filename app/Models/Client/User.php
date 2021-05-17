@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Kouja\ProjectAssistant\Traits\ModelTrait;
 
@@ -90,5 +91,14 @@ class User extends Authenticatable
     private function getAllUserSameName($name)
     {
         return User::whereRaw("username REGEXP '^{$name}(_[0-9]*)?$'")->get();
+    }
+
+    public function loginUser($data)
+    {
+        $user = null;
+        if (Auth::attempt($data, true)) {
+            $user = Auth::user();
+        }
+        return $user;
     }
 }
