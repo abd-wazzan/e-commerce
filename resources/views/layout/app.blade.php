@@ -17,8 +17,10 @@
     <link type="text/css" rel="stylesheet" href="{{ asset('css/nouislider.min.css') }}" />
     <!-- Font Awesome Icon -->
     <link type="text/css" rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" />
+    <script src="https://kit.fontawesome.com/4fc1b44d8b.js" crossorigin="anonymous"></script>
     <!-- Custom stlylesheet -->
     <link type="text/css" rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+
 
     @yield('additional_css')
 </head>
@@ -37,9 +39,5 @@
     <script src="{{ asset('js/slick.min.js') }}"></script>
     <script src="{{ asset('js/nouislider.min.js') }}"></script>
     <script src="{{ asset('js/jquery.zoom.min.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
-    <script>
-
-        </script>
     @yield('additional_js')
  </html>

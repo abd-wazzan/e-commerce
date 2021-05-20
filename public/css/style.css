@@ -2245,19 +2245,29 @@ textarea.input {
     }
 }
 
-@media only screen and (max-width: 1201px) {}
+@media only screen and (max-width: 1600px) {
+    .card button {
+        margin-left: 39%;
+    }
+}
+
+@media only screen and (max-width: 1201px) {
+    .card button {
+        margin-left: 53%;
+    }
+}
 
 @media only screen and (max-width: 991px) {
-    /* 
+    /*
     I'm commented this to use float right in mideum screens
-    
+
     #top-header .header-links.pull-left {
         float: none !important;
     }
     #top-header .header-links.pull-right {
         float: none !important;
         margin-top: 5px;
-    } 
+    }
     */
     .header-logo {
         float: none;
@@ -2276,6 +2286,9 @@ textarea.input {
     #reviews {
         margin-top: 30px;
         margin-bottom: 30px;
+    }
+    .card button {
+        margin-left: 43%;
     }
 }
 
@@ -2324,6 +2337,9 @@ textarea.input {
     .dropdown-menu.drdnm {
         left: 35%;
     }
+    .card button {
+        margin-left: 0%;
+    }
 }
 
 @media only screen and (max-width: 480px) {
@@ -2338,4 +2354,89 @@ textarea.input {
         float: none;
         margin-top: 10px;
     }
+    .card label {
+        font-size: 10px !important;
+    }
+    .card label.email::before,
+    .card label.password::before {
+        content: "";
+        margin-right: 10px !important;
+        font-size: 15px !important;
+    }
+    .card button {
+        padding: 5px 5px;
+        font-size: 10px;
+        margin-left: 0%;
+    }
+    .card input {
+        height: 20px;
+    }
+}
+
+
+/* this is new added to style the login & signup pages */
+
+.wall {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.card-header {
+    color: white;
+    font-size: 5rem;
+    font-family: 'Montserrat';
+    letter-spacing: 10px;
+    padding-bottom: 25px;
+}
+
+.card-header::after {
+    content: ".";
+    color: #D10024;
+    font-size: 65px;
+}
+
+.card label {
+    color: white;
+    font-size: 15px;
+    font-family: 'Montserrat';
+    font-weight: 100;
+}
+
+.card label.email::before {
+    content: "\f0e0";
+    font-family: 'FontAwesome';
+    color: #D10024;
+    margin-right: 20px;
+    font-size: 25px;
+}
+
+.card label.password::before {
+    content: "\f023";
+    font-family: 'FontAwesome';
+    color: #D10024;
+    margin-right: 20px;
+    font-size: 25px;
+}
+
+.card input {
+    background-color: rgb(255, 255, 255, .2);
+    border-color: #D10024;
+}
+
+.card input:focus {
+    background-color: rgb(255, 255, 255, .7);
+    border-color: #D10024;
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px #d100234f;
+}
+
+.card button {
+    background-color: #D10024;
+    border: none;
+    font-family: 'Montserrat';
+}
+
+.card button:hover,
+.card button:focus,
+.card button:active {
+    background-color: #d100234f;
 }
