@@ -25,9 +25,9 @@ class AuthController extends Controller
 
     public function SignUp(SignUpRequest $request)
     {
-        $userData=$request->validated();
-        $userData['username'] = $userData['first_name'].' '.$userData['last_name'];
-        $addedUser=$this->users->createData($userData);
+        $userData = $request->validated();
+        $userData['username'] = $this->users->getUserName($userData['first_name'].' '.$userData['last_name']);
+        $addedUser = $this->users->createData($userData);
         if(empty($userData))
             return ResponseHelper::operationFail();
         return ResponseHelper::insert($this->users->login(['email' => $addedUser['email'], 'password' => $userData['password']]));
