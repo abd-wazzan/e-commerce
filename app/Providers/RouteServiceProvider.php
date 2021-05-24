@@ -89,21 +89,21 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapAuthRoutes()
     {
         Route::prefix('auth')
-            //->middleware('api')
+            ->middleware('web')
             ->group(base_path('routes/Client/auth.php'));
     }
 
     protected function mapFileRoutes()
     {
         Route::prefix('file')
-            //->middleware('auth:api')
+            ->middleware('web')
             ->group(base_path('routes/Client/file.php'));
     }
 
     protected function mapUserRoutes()
     {
         Route::prefix('user')
-            //->middleware('api')
+            ->middleware('web')
             ->group(base_path('routes/Client/user.php'));
     }
 }

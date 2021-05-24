@@ -37,7 +37,6 @@ class AuthController extends Controller
     {
         $userData=$request->validated();
         $signedUser = $this->users->loginUser($userData);
-        $signedUser['token'] = $signedUser->getRememberToken();
         return (empty($signedUser)) ? back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])
@@ -46,7 +45,7 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-        $request->user()->token()->revoke();
+        Auth::logout();
         return ResponseHelper::select('logout');
     }
 }
