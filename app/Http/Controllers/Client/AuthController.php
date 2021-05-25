@@ -25,9 +25,9 @@ class AuthController extends Controller
 
     public function SignUp(SignUpRequest $request)
     {
-        $userData=$request->validated();
-        $userData['username'] = $userData['first_name'].' '.$userData['last_name'];
-        $addedUser=$this->users->createData($userData);
+        $userData = $request->validated();
+        $userData['username'] = $this->users->getUserName($userData['first_name'].' '.$userData['last_name']);
+        $addedUser = $this->users->createData($userData);
         if(empty($userData))
             return ResponseHelper::operationFail();
         return ResponseHelper::insert($this->users->login(['email' => $addedUser['email'], 'password' => $userData['password']]));
@@ -37,7 +37,6 @@ class AuthController extends Controller
     {
         $userData=$request->validated();
         $signedUser = $this->users->loginUser($userData);
-        $signedUser['token'] = $signedUser->getRememberToken();
         return (empty($signedUser)) ? back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])
@@ -46,7 +45,7 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-        $request->user()->token()->revoke();
+        Auth::logout();
         return ResponseHelper::select('logout');
     }
 }

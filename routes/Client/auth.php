@@ -10,6 +10,6 @@ Route::post('login', [AuthController::class,'signIn'])->name('login');
 Route::view('signup', 'client.auth.signup');
 Route::post('signup', [AuthController::class,'signUp'])->name('signup');
 
-Route::middleware(['auth:web'])->group(function () {
+Route::middleware('auth')->group(function () {
     Route::get('logout', [AuthController::class,'logout']);
 });

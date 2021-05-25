@@ -16,13 +16,13 @@ use Kouja\ProjectAssistant\Helpers\ResponseHelper;
 
 Route::get('/', function () {
     return view('product/index');
-});
+})->middleware('auth');
 
 Route::get('/test', function () {
     return view('test');
 });
 
-Route::get('/user', function (Illuminate\Http\Request $request) {
-    return ResponseHelper::select($request->user());
+Route::get('/user', function () {
+    return ResponseHelper::select(auth()->user());
 });
 /** this is for project */
