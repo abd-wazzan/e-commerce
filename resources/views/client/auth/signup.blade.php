@@ -19,27 +19,57 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-xs-5 col-md-4 col-lg-3 col-form-label text-md-right email">{{ __('E-Mail Address') }}</label>
-
+                            <i class="far fa-envelope"></i>
                             <div class="col-xs-10 col-sm-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="Email">
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-xs-5 col-md-4 col-lg-3 col-form-label text-md-right password">{{ __('Password') }}</label>
-
+                            <i class="far fa-user"></i>
                             <div class="col-xs-10 col-sm-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                                <input id="first-name" type="text" class="form-control" name="first-name" required placeholder="First Name">
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <i class="far fa-user"></i>
+                            <div class="col-xs-10 col-sm-6">
+                                <input id="last-name" type="text" class="form-control" name="last-name" required placeholder="Last Name">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <i class="fas fa-lock"></i>
+                            <div class="col-xs-10 col-sm-6">
+                                <input id="password" type="password" class="form-control" name="password" minlength="4" maxlength="16" required placeholder="Password">
+                                <i class="far fa-eye pass-icon pull-right" onclick="show_password()"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <i class="fas fa-phone"></i>
+                            <div class="col-xs-10 col-sm-6">
+                                <input id="phone" type="tel" class="form-control" name="phone" required placeholder="Phone">
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-4">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Login
+                                    Sign Up
                                 </button>
                             </div>
                         </div>
+
+                        <div class="form-group row mb-4">
+                            <div class="col-md-8 offset-md-4">
+                                <a href="https://wazzan-e-commerce.herokuapp.com/auth/login" >
+                                    I already have an account !
+                                </a>
+                            </div>
+                        </div>
+
                     </form>
                 </div>
             </div>

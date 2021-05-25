@@ -17,26 +17,33 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-                        {{-- <i class="fas fa-sign-in-alt"></i> --}}
                         <div class="form-group row">
-                            <label for="email" class="col-xs-5 col-md-4 col-lg-3 col-form-label text-md-right email">{{ __('E-Mail Address') }}</label>
+                            <i class="far fa-envelope"></i>
                             <div class="col-xs-10 col-sm-6">
-                                <input id="email" type="email" class="form-control " name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="Email">
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-xs-5 col-md-4 col-lg-3 col-form-label text-md-right password">{{ __('Password') }}</label>
-
+                            <i class="fas fa-lock"></i>
                             <div class="col-xs-10 col-sm-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                                <input id="password" type="password" class="form-control" name="password" minlength="4" maxlength="16" required placeholder="Password">
+                                <i class="far fa-eye pass-icon pull-right" onclick="show_password()"></i>
                             </div>
                         </div>
+
                         <div class="form-group row mb-4">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     Login
                                 </button>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <div class="col-md-8 offset-md-4">
+                                <a href="https://wazzan-e-commerce.herokuapp.com/auth/signup">
+                                    Register a new account !
+                                </a>
                             </div>
                         </div>
                     </form>

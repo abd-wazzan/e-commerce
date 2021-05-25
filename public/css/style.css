@@ -83,9 +83,9 @@ a {
 
 a:hover,
 a:focus {
-    color: #D10024;
-    text-decoration: none;
-    outline: none;
+    color: #D10024 !important;
+    text-decoration: none !important;
+    outline: none !important;
 }
 
 ul,
@@ -1254,7 +1254,11 @@ textarea.input {
 
 .products-slick-nav .slick-prev:before,
 .products-slick-nav .slick-next:before {
-    font-size: 14px;
+    font-size: 12px;
+    color: white;
+    background-color: #D10024;
+    padding: 5px;
+    border-radius: 12px;
 }
 
 
@@ -2245,17 +2249,7 @@ textarea.input {
     }
 }
 
-@media only screen and (max-width: 1600px) {
-    .card button {
-        margin-left: 39%;
-    }
-}
-
-@media only screen and (max-width: 1201px) {
-    .card button {
-        margin-left: 53%;
-    }
-}
+@media only screen and (max-width: 1201px) {}
 
 @media only screen and (max-width: 991px) {
     /*
@@ -2286,9 +2280,6 @@ textarea.input {
     #reviews {
         margin-top: 30px;
         margin-bottom: 30px;
-    }
-    .card button {
-        margin-left: 43%;
     }
 }
 
@@ -2337,9 +2328,6 @@ textarea.input {
     .dropdown-menu.drdnm {
         left: 35%;
     }
-    .card button {
-        margin-left: 0%;
-    }
 }
 
 @media only screen and (max-width: 480px) {
@@ -2354,22 +2342,30 @@ textarea.input {
         float: none;
         margin-top: 10px;
     }
-    .card label {
-        font-size: 10px !important;
-    }
-    .card label.email::before,
-    .card label.password::before {
-        content: "";
-        margin-right: 10px !important;
-        font-size: 15px !important;
+    .card-header {
+        font-size: 25px !important;
     }
     .card button {
         padding: 5px 5px;
         font-size: 10px;
+    }
+    .card a {
+        font-size: 8px !important;
         margin-left: 0%;
     }
     .card input {
-        height: 20px;
+        height: 25px;
+    }
+    .card input::placeholder {
+        font-size: 8px !important;
+        line-height: 1 !important;
+    }
+    .card i {
+        font-size: 10px !important;
+        margin-left: 5px !important;
+    }
+    .card.pass-icon {
+        margin-top: -18px !important;
     }
 }
 
@@ -2383,7 +2379,7 @@ textarea.input {
 
 .card-header {
     color: white;
-    font-size: 5rem;
+    font-size: 50px;
     font-family: 'Montserrat';
     letter-spacing: 10px;
     padding-bottom: 25px;
@@ -2402,25 +2398,30 @@ textarea.input {
     font-weight: 100;
 }
 
-.card label.email::before {
-    content: "\f0e0";
+.card i {
     font-family: 'FontAwesome';
-    color: #D10024;
-    margin-right: 20px;
+    font-style: normal;
+    color: gray;
+    margin-left: 10px;
     font-size: 25px;
+    line-height: 1.4;
 }
 
-.card label.password::before {
-    content: "\f023";
-    font-family: 'FontAwesome';
-    color: #D10024;
-    margin-right: 20px;
-    font-size: 25px;
+.card i.pass-icon {
+    color: black;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: -28px;
+    margin-right: 10px;
 }
 
 .card input {
     background-color: rgb(255, 255, 255, .2);
     border-color: #D10024;
+}
+
+.card input::placeholder {
+    color: gray;
 }
 
 .card input:focus {
@@ -2439,4 +2440,10 @@ textarea.input {
 .card button:focus,
 .card button:active {
     background-color: #d100234f;
+}
+
+.card a {
+    font-family: 'Montserrat';
+    color: gray;
+    font-size: small;
 }

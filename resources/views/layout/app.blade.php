@@ -25,12 +25,12 @@
     @yield('additional_css')
 </head>
 @include('layout.header')
- <body>
+<body>
 
- @yield('content')
+@yield('content')
 
- </body>
- @include('layout.footer')
+</body>
+@include('layout.footer')
 
 
     <!-- jQuery Plugins -->
@@ -39,5 +39,7 @@
     <script src="{{ asset('js/slick.min.js') }}"></script>
     <script src="{{ asset('js/nouislider.min.js') }}"></script>
     <script src="{{ asset('js/jquery.zoom.min.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+
     @yield('additional_js')
- </html>
+</html>

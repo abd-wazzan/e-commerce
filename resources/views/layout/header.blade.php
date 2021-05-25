@@ -9,8 +9,8 @@
                     <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
                 </ul>
                 <ul class="header-links pull-right">
-                    <li><a href="#"><i class="fa fa-sign-in"></i>sign in</a></li>
-                    <li><a href="#"><i class="fa fa-user-o"></i>login</a></li>
+                    <li><a href="https://wazzan-e-commerce.herokuapp.com/auth/signup"><i class="fa fa-sign-in"></i>Sign Up</a></li>
+                    <li><a href="https://wazzan-e-commerce.herokuapp.com/auth/login"><i class="fa fa-user-o"></i>Login</a></li>
                 </ul>
             </div>
         </div>
@@ -117,26 +117,3 @@
         <!-- /MAIN HEADER -->
     </header>
     <!-- /HEADER -->
-    <!-- NAVIGATION -->
-    <nav id="navigation">
-        <!-- container -->
-        <div class="container">
-            <!-- responsive-nav -->
-            <div id="responsive-nav">
-                <!-- NAV -->
-                <ul class="main-nav nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Hot Deals</a></li>
-                    <li><a href="#">Categories</a></li>
-                    <li><a href="#">Laptops</a></li>
-                    <li><a href="#">Smartphones</a></li>
-                    <li><a href="#">Cameras</a></li>
-                    <li><a href="#">Accessories</a></li>
-                </ul>
-                <!-- /NAV -->
-            </div>
-            <!-- /responsive-nav -->
-        </div>
-        <!-- /container -->
-    </nav>
-    <!-- /NAVIGATION -->
