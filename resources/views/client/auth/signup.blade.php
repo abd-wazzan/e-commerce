@@ -28,14 +28,14 @@
                         <div class="form-group row">
                             <i class="far fa-user"></i>
                             <div class="col-xs-10 col-sm-6">
-                                <input id="first-name" type="text" class="form-control" name="first-name" required placeholder="First Name">
+                                <input id="first-name" type="text" class="form-control" name="first_name" required placeholder="First Name">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <i class="far fa-user"></i>
                             <div class="col-xs-10 col-sm-6">
-                                <input id="last-name" type="text" class="form-control" name="last-name" required placeholder="Last Name">
+                                <input id="last-name" type="text" class="form-control" name="last_name" required placeholder="Last Name">
                             </div>
                         </div>
 
@@ -79,5 +79,14 @@
 @endsection
 
 @section('additional_js')
-
+<script>
+function show_password() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
+</script>
 @endsection
