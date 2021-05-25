@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
                 'user_scope' => 'admin',
                 'phone_verified_at'=> Carbon::now(),
                 'email'=> 'admin@scholar.com',
-                'email_verified_at'=> Carbon::now()
+               'email_verified_at'=> Carbon::now()
             ],
             [
                 'id' => 2,
