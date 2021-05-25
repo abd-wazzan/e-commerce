@@ -32,7 +32,8 @@ class AuthController extends Controller
         $addedUser = $this->users->createData($userData);
         if(empty($userData))
             return ResponseHelper::operationFail();
-        return ResponseHelper::insert($this->users->loginUser(['email' => $addedUser['email'], 'password' => $userData['password']]));
+        $this->users->loginUser(['email' => $addedUser['email'], 'password' => $userData['password']]);
+        return view('product.index');
     }
 
     public function signIn(SignInRequest $request)
@@ -42,7 +43,7 @@ class AuthController extends Controller
         return (empty($signedUser)) ? back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])
-        : ResponseHelper::select($signedUser);
+        : view('product.index');
     }
 
     public function logout(Request $request)

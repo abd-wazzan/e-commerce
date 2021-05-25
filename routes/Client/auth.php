@@ -4,10 +4,10 @@ use App\Http\Controllers\Client\AuthController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::view('login', 'client.auth.login');
+Route::view('login', 'client.auth.login')->middleware('guest');
 Route::post('login', [AuthController::class,'signIn'])->name('login');
 
-Route::view('signup', 'client.auth.signup');
+Route::view('signup', 'client.auth.signup')->middleware('guest');
 Route::post('signup', [AuthController::class,'signUp'])->name('signup');
 
 Route::middleware('auth')->group(function () {
