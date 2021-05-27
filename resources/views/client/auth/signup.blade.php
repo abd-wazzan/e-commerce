@@ -64,7 +64,7 @@
 
                         <div class="form-group row mb-4">
                             <div class="col-md-8 offset-md-4">
-                                <a href="https://wazzan-e-commerce.herokuapp.com/auth/login" >
+                                <a href="https://wazzan-e-commerce.herokuapp.com/auth/login">
                                     I already have an account !
                                 </a>
                             </div>
