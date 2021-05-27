@@ -14,7 +14,7 @@ class CreateCategoriesForeignKeys extends Migration
     public function up()
     {
         Schema::table('categories', function (Blueprint $table) {
-            $table->foreignId('category_id')->constrained();
+            $table->foreignId('category_id')->nullable()->constrained();
         });
 
         Schema::table('category_specs', function (Blueprint $table) {

@@ -27,10 +27,13 @@ class AuthController extends Controller
     {
         $userData = $request->validated();
         $userData['username'] = $this->users->getUserName($userData['first_name'].' '.$userData['last_name']);
+        $userData['name'] = $userData['first_name'].' '.$userData['last_name'];
+        $userData['user_scope'] = 'user';
         $addedUser = $this->users->createData($userData);
         if(empty($userData))
             return ResponseHelper::operationFail();
-        return ResponseHelper::insert($this->users->login(['email' => $addedUser['email'], 'password' => $userData['password']]));
+        $this->users->loginUser(['email' => $addedUser['email'], 'password' => $userData['password']]);
+        return redirect('/');
     }
 
     public function signIn(SignInRequest $request)
@@ -40,12 +43,12 @@ class AuthController extends Controller
         return (empty($signedUser)) ? back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])
-        : ResponseHelper::select($signedUser);
+        : redirect('/');
     }
 
     public function logout(Request $request)
     {
         Auth::logout();
-        return ResponseHelper::select('logout');
+        return redirect('/');
     }
 }

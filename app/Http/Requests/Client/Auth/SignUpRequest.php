@@ -21,7 +21,7 @@ class SignUpRequest extends BaseFormRequest
             'password' =>   ['required','string','min:4','max:16'],
             'first_name' => ['required','string'],
             'last_name' =>  ['required','string'],
-            'phone' => ['nullable', new Phone()]
+            'phone' => ['nullable', 'min:9']
         ];
     }
 
