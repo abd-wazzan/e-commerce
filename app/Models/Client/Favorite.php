@@ -10,7 +10,7 @@ class Favorite extends BaseModel
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'favorite';
+    protected $table = 'favorites';
 
     /**
      * The attributes that are mass assignable.

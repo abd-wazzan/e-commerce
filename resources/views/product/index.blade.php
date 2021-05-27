@@ -4,6 +4,20 @@
 @endsection
 
 @section('content')
+<div class="col-md-6">
+    <div class="header-search">
+        <form>
+            <select class="input-select">
+                <option value="0">Choose Category</option>
+                @foreach ($categories as $category)
+                <option {{($category->id == $categoryId)? 'selected' : ''}} value="{{$category->id}}">{{ $category->name }}</option>
+                @endforeach
+            </select>
+            <input class="input" placeholder="Search here">
+            <button class="search-btn">Search</button>
+        </form>
+    </div>
+</div>
 <!-- SECTION -->
 <div class="section">
     <!-- container -->
@@ -16,10 +30,10 @@
                         <h3 class="title">New Products</h3>
                         <div class="section-nav">
                             <ul class="section-tab-nav tab-nav">
-                                <li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
-                                <li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
-                                <li><a data-toggle="tab" href="#tab1">Cameras</a></li>
-                                <li><a data-toggle="tab" href="#tab1">Accessories</a></li>
+                                <li class="active"><a data-toggle="tab" href="#tab1">Test</a></li>
+                                @foreach ($subCategories as $subCategory)
+                                <li><a data-toggle="tab" href="#tab1">{{$subCategory->name}}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
