@@ -10,7 +10,7 @@
             <select class="input-select">
                 <option value="0">Choose Category</option>
                 @foreach ($categories as $category)
-                <option {{($category->id == ($prarams['cat'] ?? 0))? 'selected' : ''}} value="{{$category->id}}">{{ $category->name }}</option>
+                <option {{($category->id == ($params['cat'] ?? 0))? 'selected' : ''}} value="{{$category->id}}">{{ $category->name }}</option>
                 @endforeach
             </select>
             <input class="input" placeholder="Search here">
@@ -30,9 +30,9 @@
                         <h3 class="title">New Products</h3>
                         <div class="section-nav">
                             <ul class="section-tab-nav tab-nav">
-                                <li class="active"><a data-toggle="tab" href="#tab1">Test</a></li>
+                                {{-- <li class="active"><a data-toggle="tab" href="#tab1">Test</a></li> --}}
                                 @foreach ($subCategories as $subCategory)
-                                <li><a data-toggle="tab" href="#tab1">{{$subCategory->name}}</a></li>
+                                <li {{($subCategory->id == ($params['sub'] ?? 0))? 'class=active' : ''}}><a data-toggle="tab" href="#tab1">{{$subCategory->name}}</a></li>
                                 @endforeach
                             </ul>
                         </div>

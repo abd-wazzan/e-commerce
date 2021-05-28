@@ -80,26 +80,30 @@ class Product extends BaseModel
         return $this->hasMany(ProductSpec::class);
     }
 
-    public function filterProducts($mainCategoryId, $categoryId, $minPrice, $maxPrice, $info, $filter)
+    public function filterProducts($categoryId, $minPrice, $maxPrice, $info, $filter)
     {
         $query =  Product::query();
 
-        $query->when(!!$mainCategoryId, function ($q) use ($mainCategoryId) {
-            return $q->whereHas('category', function ($category) use ($mainCategoryId){
-                return $category->where('category_id', $mainCategoryId);
+        $query->where('price', '>=', $minPrice)->where('price', '<=', $maxPrice);
+
+        $query->when(!empty($info), function ($q) use ($info) {
+            return $q->where(function ($qu) use ($info){
+                return $qu->where('name', 'like', '%' . $info . '%')->orWhere('description', 'like', '%' . $info . '%');
             });
+
         });
 
         $query->when(!!$categoryId, function ($q) use ($categoryId) {
-            return $q->where('category_id', $categoryId);
+            return $q->where(function ($qu) use ($categoryId) {
+                $qu->whereHas('category', function ($category) use ($categoryId) {
+                    return $category->where('id', $categoryId);
+                })->orwhereHas('category', function ($category) use ($categoryId) {
+                    return $category->where('category_id', $categoryId);
+                });
+            });
         });
 
-        $query->where('price', '>=', $minPrice)->where('price', '<=', $maxPrice);
 
-
-        $query->when(!empty($info), function ($q) use ($info) {
-            return $q->where('name', 'like', '%' . $info . '%')->orWhere('description', 'like', '%' . $info . '%');
-        });
 
         $query->when(count($filter) != 0, function ($q) use ($filter) {
             return $q->whereHas('productSpecs', function ($spec) use ($filter) {

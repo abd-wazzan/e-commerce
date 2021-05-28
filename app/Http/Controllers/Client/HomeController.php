@@ -36,7 +36,7 @@ class HomeController extends Controller
             return $categorySpecs->with('categoryOptions');
         }]) : [];
 
-        $products = $this->product->filterProducts($categoryId, $subCategoryId, $minPrice, $maxPrice, $info, $filter);
+        $products = $this->product->filterProducts($subCategoryId ? $subCategoryId : $categoryId, $minPrice, $maxPrice, $info, $filter);
 
         return view('product.index', compact('params', 'categories', 'subCategories', 'products'));
     }
