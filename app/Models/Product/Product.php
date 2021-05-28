@@ -113,6 +113,11 @@ class Product extends BaseModel
             });
         });
 
+        $query->with(['productSpecs' => function($spec)
+        {
+            $spec->with('productOptions');
+        }]);
+
         return $query->orderBy('id', 'DESC')->limit(15)->get();
     }
 }
