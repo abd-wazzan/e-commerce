@@ -7,6 +7,9 @@ use Database\Seeders\Category\CategorySeeder;
 use Database\Seeders\Category\CategorySpecSeeder;
 use Illuminate\Database\Seeder;
 use Database\Seeders\Client\UserSeeder;
+use Database\Seeders\Product\ProductOptionSeeder;
+use Database\Seeders\Product\ProductSeeder;
+use Database\Seeders\Product\ProductSpecSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,6 +25,9 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             CategorySpecSeeder::class,
             CategoryOptionSeeder::class,
+            ProductSeeder::class,
+            ProductSpecSeeder::class,
+            ProductOptionSeeder::class,
         ]);
     }
 }

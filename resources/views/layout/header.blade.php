@@ -23,7 +23,7 @@
                     <div class="col-md-3 clearfix">
                         <div class="header-ctn">
                             <!-- Wishlist -->
-                            @if (\Auth::check())
+                            @auth
                             <div>
                                 <a href="#">
                                     <i class="fa fa-heart-o"></i>
@@ -71,7 +71,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                            @endif
+                            @endauth
 
                             <!-- /Wishlist -->
 

@@ -15,6 +15,7 @@ class CreateProductsForeignKeys extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             $table->foreignId('category_id')->constrained();
+            $table->foreignId('user_id')->constrained();
         });
 
         Schema::table('product_specs', function (Blueprint $table) {

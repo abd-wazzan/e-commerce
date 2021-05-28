@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Product\GetProductsRequest;
 use App\Models\Category\Category;
 use App\Models\Product\Product;
 use Illuminate\Http\Request;
+use Kouja\ProjectAssistant\Helpers\ResponseHelper;
 
 class HomeController extends Controller
 {
@@ -18,21 +20,24 @@ class HomeController extends Controller
         $this->product = $product;
     }
 
-    public function index(Request $request)
+    public function index(GetProductsRequest $request)
     {
+        $params = $request->validated();
         $categoryId = $request->get('cat', 0);
-        $subCategoryId = $request->get('sub',0);
-        $categories = $this->category->getData(['category_id' => null],['categories']);
-        $subCategories = (bool)$categoryId ? $this->category->getData(['category_id' => $categoryId],['categorySpecs' => function($categorySpecs)
-        {
+        $subCategoryId = $request->get('sub', 0);
+        $minPrice = $request->get('min_price', 0);
+        $maxPrice = $request->get('max_price', 999999999);
+        $info = $request->get('info');
+        $filter = $request->get('filter', []);
+
+        $categories = $this->category->getData(['category_id' => null], ['categories']);
+
+        $subCategories = !!$categoryId ? $this->category->getData(['category_id' => $categoryId], ['categorySpecs' => function ($categorySpecs) {
             return $categorySpecs->with('categoryOptions');
         }]) : [];
 
-        $products = $this->product->getData(['category_id' => $categoryId],['productSpecs' => function($productSpecs)
-        {
-            return $productSpecs->with('productOptions');
-        }], ['*'], 'DESC', 'id', 15);
+        $products = $this->product->filterProducts($categoryId, $subCategoryId, $minPrice, $maxPrice, $info, $filter);
 
-        return view('product.index', compact('categories', 'products', 'subCategories', 'categoryId'));
+        return view('product.index', compact('params', 'categories', 'subCategories', 'products'));
     }
 }
