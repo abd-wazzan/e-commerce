@@ -20,10 +20,19 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
-        $categoryId = $request->get('category_id', 0);
+        $categoryId = $request->get('cat', 0);
+        $subCategoryId = $request->get('sub',0);
         $categories = $this->category->getData(['category_id' => null],['categories']);
-        $subCategories = (bool)$categoryId ? $this->category->getData(['category_id' => $categoryId]) : [];
-        $products = $this->product->getData([], [], ['*'], 'DESC', 'id', 10);
+        $subCategories = (bool)$categoryId ? $this->category->getData(['category_id' => $categoryId],['categorySpecs' => function($categorySpecs)
+        {
+            return $categorySpecs->with('categoryOptions');
+        }]) : [];
+
+        $products = $this->product->getData(['category_id' => $categoryId],['productSpecs' => function($productSpecs)
+        {
+            return $productSpecs->with('productOptions');
+        }], ['*'], 'DESC', 'id', 15);
+
         return view('product.index', compact('categories', 'products', 'subCategories', 'categoryId'));
     }
 }
