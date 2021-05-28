@@ -80,7 +80,7 @@ class Product extends BaseModel
         return $this->hasMany(ProductSpec::class);
     }
 
-    public function filterProducts($categoryId, $minPrice, $maxPrice, $info, $filter)
+    public function filterProducts($categoryId, $minPrice, $maxPrice, $info, $filters)
     {
         $query =  Product::query();
 
@@ -104,14 +104,25 @@ class Product extends BaseModel
         });
 
 
-
-        $query->when(count($filter) != 0, function ($q) use ($filter) {
-            return $q->whereHas('productSpecs', function ($spec) use ($filter) {
-                return $spec->whereHas('productOptions', function ($options) use ($filter) {
-                    return $options->whereIn('category_option_id', $filter);
+        if(count($filters) > 0)
+        {
+            foreach ($filters as $filter)
+            {
+                $query->whereHas('productSpecs', function ($propertySec) use ($filter) {
+                    $propertySec->whereHas('productOptions', function ($propertyOption) use ($filter) {
+                        $propertyOption->where('category_option_id', $filter);
+                    });
                 });
-            });
-        });
+            }
+        }
+
+        // $query->when(count($filter) != 0, function ($q) use ($filter) {
+        //     return $q->whereHas('productSpecs', function ($spec) use ($filter) {
+        //         return $spec->whereHas('productOptions', function ($options) use ($filter) {
+        //             return $options->whereIn('category_option_id', $filter);
+        //         });
+        //     });
+        // });
 
         $query->with(['productSpecs' => function($spec)
         {
