@@ -9,8 +9,10 @@
         <form>
             <select class="input-select">
                 <option value="0">Choose Category</option>
-                @foreach ($categories as $category)
-                <option {{($category->id == $categoryId)? 'selected' : ''}} value="{{$category->id}}">{{ $category->name }}</option>
+                <!--?category_id=1 for see subcategories-->
+
+               @foreach ($categories as $category)
+                <option {{($category->id == $categoryId)? 'selected' : ''}} value="{{$category->id}}">{{ $category->name }} </option>
                 @endforeach
             </select>
             <input class="input" placeholder="Search here">
@@ -31,9 +33,14 @@
                         <div class="section-nav">
                             <ul class="section-tab-nav tab-nav">
                                 <li class="active"><a data-toggle="tab" href="#tab1">Test</a></li>
-                                @foreach ($subCategories as $subCategory)
+                            @foreach ($subCategories as $subCategory)
                                 <li><a data-toggle="tab" href="#tab1">{{$subCategory->name}}</a></li>
                                 @endforeach
+                                @foreach ($products as $prod)
+                                <h3 class="product-name"><a href="#"> this is sarah {{ $prod->name }}</a></h3>
+
+
+                                            @endforeach
                             </ul>
                         </div>
                     </div>
@@ -57,7 +64,8 @@
                                         </div>
                                         <div class="product-body">
                                             <p class="product-category">Category</p>
-                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
+
+
                                             <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
                                             <div class="product-rating">
                                                 <i class="fa fa-star"></i>
