@@ -19,5 +19,15 @@ class CategoryController extends Controller
     public function getCategories($id)
     {
         return ResponseHelper::select($this->category->getData(['category_id'=>$id]));
-    } 
+    }
+
+    public function getCategorySpecs($id)
+    {
+        $category = $this->category->where('id', $id)->with(['categorySpecs' => function($spec){
+            $spec->with('categoryOptions');
+        }])->first();
+        if(empty($category->category_id))
+        return back();
+        return view('product.add', compact('category'));
+    }
 }
