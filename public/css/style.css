@@ -511,7 +511,7 @@ textarea.input {
 }
 
 .header-search form .input {
-    width: calc(100% - 260px);
+    width: calc(100% - 300px);
     margin-right: -4px;
 }
 
@@ -537,10 +537,6 @@ textarea.input {
 
 .header-ctn>div {
     display: inline-block;
-}
-
-.header-ctn>div+div {
-    margin-left: 15px;
 }
 
 .header-ctn>div>a {
@@ -935,12 +931,6 @@ textarea.input {
     font-size: 12px;
 }
 
-.product .product-img .product-label>span.sale {
-    background-color: #FFF;
-    border-color: #D10024;
-    color: #D10024;
-}
-
 .product .product-img .product-label>span.new {
     background-color: #D10024;
     border-color: #D10024;
@@ -978,12 +968,6 @@ textarea.input {
 .product .product-body .product-price {
     color: #D10024;
     font-size: 18px;
-}
-
-.product .product-body .product-price .product-old-price {
-    font-size: 70%;
-    font-weight: 400;
-    color: #8D99AE;
 }
 
 .product .product-body .product-rating {
@@ -2249,6 +2233,12 @@ textarea.input {
     }
 }
 
+@media only screen and (min-width: 1202px) and (max-width: 1600px) {
+    .serch-container {
+        margin-left: 25%;
+    }
+}
+
 @media only screen and (max-width: 1201px) {}
 
 @media only screen and (max-width: 991px) {
@@ -2264,7 +2254,7 @@ textarea.input {
     }
     */
     .header-logo {
-        float: none;
+        /* float: none; */
         text-align: center;
     }
     .header-logo .logo {
@@ -2310,7 +2300,7 @@ textarea.input {
         width: 60px;
     }
     .header-ctn {
-        padding: 10px 0px 0px;
+        padding: 25px 0px 0px;
     }
     .btn.drdn {
         background-color: transparent;
