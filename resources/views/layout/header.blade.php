@@ -16,7 +16,7 @@
                     </div>
                     <!-- /LOGO -->
                     <!-- ACCOUNT -->
-                    <div class="col-md-3 clearfix pull-right">
+                    <div class="col-md-4 clearfix pull-right">
                         <div class="header-ctn">
                             @auth
                             <!-- Wishlist -->
@@ -70,14 +70,14 @@
                                 </div>
                                 <!-- /Cart -->
                             @endauth
-                            <!-- Menu Toogle -->
-                            <div class="menu-toggle">
+                            <!-- Add a product -->
+                            <div class="add-product">
                                 <a href="#">
-                                    <i class="fa fa-bars"></i>
-                                    <span>Menu</span>
+                                    <i class="fa fa-plus" ></i>
+                                    <span>Add a product</span>
                                 </a>
                             </div>
-                            <!-- /Menu Toogle -->
+                            <!-- /Add a product-->
                         </div>
                     </div>
                     <!-- /ACCOUNT -->

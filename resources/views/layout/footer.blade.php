@@ -9,11 +9,11 @@
                     <div class="col-md-3 col-xs-6 hid">
                         <div class="footer">
                             <h3 class="footer-title">About Us</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+                            <p>An online market that allows you to browse a wide range of products, buy and sell them within our store.</p>
                             <ul class="footer-links">
-                                <li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
-                                <li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
-                                <li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+                                <li><a href="#"><i class="fa fa-map-marker"></i>Aleppo - Alfurkan</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i>+021-75-255-84</a></li>
+                                <li><a href="#"><i class="fa fa-envelope-o"></i>electro-market@email.com</a></li>
                             </ul>
                         </div>
                     </div>
@@ -22,20 +22,18 @@
                             <button class="btn btn-secondary dropdown-toggle drdn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"> About Us
                             </button>
                             <ul class="dropdown-menu drdnm" aria-labelledby="dropdownMenuButton1">
-                                <li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
-                                <li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
-                                <li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+                                <li><a href="#"><i class="fa fa-map-marker"></i>Aleppo - Alfurkan</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i>+021-75-255-84</a></li>
+                                <li><a href="#"><i class="fa fa-envelope-o"></i>electro-market@email.com</a></li>
                             </ul>
                     </div>
                     <div class="col-md-3 col-xs-6 hid">
                         <div class="footer">
                             <h3 class="footer-title">Categories</h3>
                             <ul class="footer-links">
-                                <li><a href="#">Hot deals</a></li>
-                                <li><a href="#">Laptops</a></li>
-                                <li><a href="#">Smartphones</a></li>
-                                <li><a href="#">Cameras</a></li>
-                                <li><a href="#">Accessories</a></li>
+                                <li><a href="#">Jewlery</a></li>
+                                <li><a href="#">Clothes</a></li>
+                                <li><a href="#">Electronic Devices</a></li>
                             </ul>
                         </div>
                     </div>
@@ -44,11 +42,9 @@
                             <button class="btn btn-secondary dropdown-toggle drdn" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"> Categories
                             </button>
                             <ul class="dropdown-menu drdnm" aria-labelledby="dropdownMenuButton2">
-                                <li><a href="#">Hot deals</a></li>
-                                <li><a href="#">Laptops</a></li>
-                                <li><a href="#">Smartphones</a></li>
-                                <li><a href="#">Cameras</a></li>
-                                <li><a href="#">Accessories</a></li>
+                                <li><a href="#">Jewlery</a></li>
+                                <li><a href="#">Clothes</a></li>
+                                <li><a href="#">Electronic Devices</a></li>
                             </ul>
                     </div>
                     <div class="clearfix visible-xs"></div>
@@ -123,10 +119,8 @@
                         </ul>
                         <span class="copyright">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;
-                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This
-                            template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
-                                href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <i class="far fa-copyright"></i>
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | Electro Market
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </span>
                     </div>
