@@ -16,9 +16,10 @@ class CategoryController extends Controller
         $this->category = $category;
     }
 
-    public function getCategories($id)
+    public function getCategories()
     {
-        return ResponseHelper::select($this->category->getData(['category_id'=>$id]));
+        $categories = $this->category->where('category_id', '=', null)->with('categories')->get();
+        return view('category.choose-category', compact('categories'));
     }
 
     public function getCategorySpecs($id)

@@ -72,7 +72,7 @@
                             @endauth
                             <!-- Add a product -->
                             <div class="add-product">
-                                <a href="#">
+                                <a href="{{route('chose-cat')}}">
                                     <i class="fa fa-plus" ></i>
                                     <span>Add a product</span>
                                 </a>

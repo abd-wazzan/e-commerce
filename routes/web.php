@@ -22,9 +22,7 @@ Route::get('/', [HomeController::class, 'index'])->middleware('auth');
 Route::get('/test', function () {
     return view('layout.app');
 });
-Route::get('/choose', function () {
-    return view('product.choose-product');
-});
+
 
 Route::get('/user', function () {
     return ResponseHelper::select(auth()->user());
@@ -32,6 +30,8 @@ Route::get('/user', function () {
 /** this is for project */
 
 Route::prefix('product')->middleware('auth')->group(function () {
-    Route::get('add/{id}', [CategoryController::class, 'getCategorySpecs']);
+    Route::get('add/{id}', [CategoryController::class, 'getCategorySpecs'])->name('product.add');
     Route::post('store', [ProductController::class, 'store'])->name('product.store');
+    Route::get('/cat', [CategoryController::class, 'getCategories'])->name('chose-cat');
 });
+
