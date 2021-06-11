@@ -1,6 +1,12 @@
 @extends('layout.app')
 @section('additional_css')
+<style type="text/css">
 
+.add-product{
+    display: inline-block !important;
+}
+
+</style>
 @endsection
 
 @section('content')

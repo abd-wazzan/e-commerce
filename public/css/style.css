@@ -2467,11 +2467,50 @@ textarea.input {
     border-radius: 20px;
 }
 
-.product-input {
-    width: 50%;
-    margin: 20px 0px;
+.product-form input,
+.product-form textarea {
+    display: block;
+    width: 25%;
+    margin: 20px 36%;
     border-image-slice: 1;
     border-width: 3px;
     border-image-source: linear-gradient( #D10024, #401010);
     transition: all .3s ease-in-out;
+}
+
+.product-form textarea {
+    resize: vertical;
+}
+
+
+/* this is for styling the add category page */
+
+.choose-cat .dropdown {
+    display: inline !important;
+    margin-left: 60px;
+}
+
+.choose-cat .btn-default {
+    height: 50px;
+}
+
+.choose-cat .submit-btn {
+    border-radius: 20px;
+    margin-left: 130px;
+    margin-top: 50px;
+}
+
+.choose-cat h1 {
+    color: #D10024;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    text-align: center;
+    margin-top: -50px;
+}
+
+
+/* this is for hide the add button*/
+
+.add-product {
+    display: none !important;
 }
