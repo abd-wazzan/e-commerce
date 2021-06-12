@@ -9,7 +9,7 @@
                     <div class="col-md-3 col-xs-6 hid">
                         <div class="footer">
                             <h3 class="footer-title">About Us</h3>
-                            <p>An online market that allows you to browse a wide range of products, buy and sell them within our store.</p>
+                            <p>online market that allows you to browse a wide range of products, buy and sell them within our store.</p>
                             <ul class="footer-links">
                                 <li><a href="#"><i class="fa fa-map-marker"></i>Aleppo - Alfurkan</a></li>
                                 <li><a href="#"><i class="fa fa-phone"></i>+021-75-255-84</a></li>
