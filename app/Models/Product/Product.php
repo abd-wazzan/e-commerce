@@ -132,4 +132,16 @@ class Product extends BaseModel
 
         return $query->orderBy('id', 'DESC')->limit(15)->get();
     }
+
+    public function findProduct($id)
+    {
+        return $this->where('id', '=', $id)
+        ->with(['productSpecs' => function($spec)
+        {
+            $spec->with(['productOptions' => function($options)
+            {
+                $options->with('categoryOption');
+            }])->with('categorySpec');
+        }])->first();
+    }
 }

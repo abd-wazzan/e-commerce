@@ -2,6 +2,7 @@
 
 namespace App\Models\Product;
 
+use App\Models\Category\CategorySpec;
 use App\Models\Product\Product;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Kouja\ProjectAssistant\Bases\BaseModel;

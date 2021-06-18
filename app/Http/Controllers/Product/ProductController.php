@@ -55,7 +55,7 @@ class ProductController extends Controller
             }
 
             DB::commit();
-            return ResponseHelper::select($product);
+            return redirect()->route('product.show', $product->id);
         } catch (\Exception $ex) {
             DB::rollBack();
             return ResponseHelper::operationFail($ex->getMessage());
@@ -126,5 +126,11 @@ class ProductController extends Controller
         if (empty($insertedProductSpecOption))
             return false;
         return true;
+    }
+
+    public function showProduct($id)
+    {
+        $product = $this->product->findProduct($id);
+        return view('product.show-product', compact('product'));
     }
 }

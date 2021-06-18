@@ -70,7 +70,7 @@ li { cursor: pointer; }
                                             <div class="product-btns">
                                                 <button onclick="toggleFavorite({{$product->id}})" class="add-to-wishlist"><i class="fa fa-heart-o"></i><span
                                                         class="tooltipp">add to wishlist</span></button>
-                                                <button class="quick-view"><i class="fa fa-eye"></i><span
+                                                <button onclick="showProduct({{$product->id}})" class="quick-view"><i class="fa fa-eye"></i><span
                                                     class="tooltipp">quick view</span></button>
                                             </div>
                                         </div>
@@ -167,6 +167,13 @@ function refreshWithParam(key, value) {
 
     // reload page with new params
     document.location.search = params;
+}
+
+function showProduct(id)
+{
+    var url = '{{ route("product.show", ":id") }}';
+    url = url.replace(':id', id);
+    window.location.href = url;
 }
 
 </script>

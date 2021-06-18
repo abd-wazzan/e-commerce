@@ -36,7 +36,8 @@ Route::middleware('auth')->group(function () {
         Route::get('add/{id}', [CategoryController::class, 'getCategorySpecs'])->name('product.add');
         Route::post('store', [ProductController::class, 'store'])->name('product.store');
         Route::get('/cat', [CategoryController::class, 'getCategories'])->name('chose-cat');
-    });
+        Route::get('show/{id}', [ProductController::class, 'showProduct'])->name('product.show');
+        });
 
     Route::prefix('favorite')->group(function () {
         Route::get('toggle/{product_id}', [FavoriteController::class, 'toggle'])->name('favorite.toggle');
