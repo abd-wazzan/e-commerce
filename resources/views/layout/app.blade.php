@@ -40,6 +40,25 @@
     <script src="{{ asset('js/nouislider.min.js') }}"></script>
     <script src="{{ asset('js/jquery.zoom.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+    <script>
+        function toggleCart(product_id){
+    var url = '{{ route("cart.toggle", ":id") }}';
+    url = url.replace(':id', product_id);
+$.ajax({
+    url: url,
+    method: "get",
+    cache: false,
+    contentType: false,
+    processData: false,
+    dataType: 'json'
+}).done(function(response) {
+ console.log("added to card");
+}).fail(function(e) {
+    alert("An error occurred. Please try again.");
+}).always(function() {
 
+});
+}
+</script>
     @yield('additional_js')
 </html>

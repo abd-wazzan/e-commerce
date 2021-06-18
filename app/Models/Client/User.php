@@ -3,6 +3,7 @@
 namespace App\Models\Client;
 
 use App\Enums\Client\GenderEnum;
+use App\Models\Product\Product;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -72,6 +73,11 @@ class User extends Authenticatable
     public function carts()
     {
         return $this->hasMany(Cart::class);
+    }
+
+    public function cartProducts()
+    {
+        return $this->belongsToMany(Product::class, 'carts', 'user_id', 'product_id');
     }
 
     public function favorites()

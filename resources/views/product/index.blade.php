@@ -70,14 +70,14 @@
                                                 <i class="fa fa-star"></i>
                                             </div>
                                             <div class="product-btns">
-                                                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span
+                                                <button onclick="toggleFavorite({{$product->id}})" class="add-to-wishlist"><i class="fa fa-heart-o"></i><span
                                                         class="tooltipp">add to wishlist</span></button>
                                                 <button class="quick-view"><i class="fa fa-eye"></i><span
                                                     class="tooltipp">quick view</span></button>
                                             </div>
                                         </div>
                                         <div class="add-to-cart">
-                                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to
+                                            <button onclick="toggleCart({{$product->id}})" class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to
                                                 cart</button>
                                         </div>
                                     </div>
@@ -101,5 +101,24 @@
 @endsection
 
 @section('additional_js')
+<script>
+function toggleFavorite(product_id){
+    var url = '{{ route("favorite.toggle", ":id") }}';
+    url = url.replace(':id', product_id);
+$.ajax({
+    url: url,
+    method: "get",
+    cache: false,
+    contentType: false,
+    processData: false,
+    dataType: 'json'
+}).done(function(response) {
+ console.log("added to favorite");
+}).fail(function(e) {
+    alert("An error occurred. Please try again.");
+}).always(function() {
 
+});
+}
+</script>
 @endsection

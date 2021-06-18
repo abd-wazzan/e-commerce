@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Category\CategoryController;
+use App\Http\Controllers\Client\CartController;
+use App\Http\Controllers\Client\FavoriteController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Product\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -29,9 +31,19 @@ Route::get('/user', function () {
 });
 /** this is for project */
 
-Route::prefix('product')->middleware('auth')->group(function () {
-    Route::get('add/{id}', [CategoryController::class, 'getCategorySpecs'])->name('product.add');
-    Route::post('store', [ProductController::class, 'store'])->name('product.store');
-    Route::get('/cat', [CategoryController::class, 'getCategories'])->name('chose-cat');
+Route::middleware('auth')->group(function () {
+    Route::prefix('product')->group(function () {
+        Route::get('add/{id}', [CategoryController::class, 'getCategorySpecs'])->name('product.add');
+        Route::post('store', [ProductController::class, 'store'])->name('product.store');
+        Route::get('/cat', [CategoryController::class, 'getCategories'])->name('chose-cat');
+    });
+
+    Route::prefix('favorite')->group(function () {
+        Route::get('toggle/{product_id}', [FavoriteController::class, 'toggle'])->name('favorite.toggle');
+    });
+
+    Route::prefix('cart')->group(function () {
+        Route::get('toggle/{product_id}', [CartController::class, 'toggle'])->name('cart.toggle');
+    });
 });
 

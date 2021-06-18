@@ -37,30 +37,22 @@
                                     </a>
                                     <div class="cart-dropdown">
                                         <div class="cart-list">
+                                            @foreach (auth()->user()->carts as $cart)
                                             <div class="product-widget">
                                                 <div class="product-img">
-                                                    <img src="./img/product01.png" alt="">
+                                                    <img src="{{$cart->product->img ?? "./img/product02.png"}}" alt="">
                                                 </div>
                                                 <div class="product-body">
-                                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                                    <h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
+                                                    <h3 class="product-name"><a href="#">{{$cart->product->name}}</a></h3>
+                                                    <h4 class="product-price"><span class="qty">{{$cart->qty}}x</span>${{$cart->product->price}}</h4>
                                                 </div>
-                                                <button class="delete"><i class="fa fa-close"></i></button>
+                                                <button onclick="toggleCart({{$product->id}})" class="delete"><i class="fa fa-close"></i></button>
                                             </div>
-                                            <div class="product-widget">
-                                                <div class="product-img">
-                                                    <img src="./img/product02.png" alt="">
-                                                </div>
-                                                <div class="product-body">
-                                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                                    <h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
-                                                </div>
-                                                <button class="delete"><i class="fa fa-close"></i></button>
-                                            </div>
+                                            @endforeach
                                         </div>
                                         <div class="cart-summary">
-                                            <small>3 Item(s) selected</small>
-                                            <h5>SUBTOTAL: $2940.00</h5>
+                                            <small>{{auth()->user()->carts->count()}} Item(s) selected</small>
+                                            <h5>SUBTOTAL: ${{auth()->user()->cartProducts()->sum('price')}}</h5>
                                         </div>
                                         <div class="cart-btns">
                                             <a href="#">View Cart</a>
