@@ -26,8 +26,9 @@ class StoreProductRequest extends BaseFormRequest
             'price' => ['required', 'integer', 'min:1', 'max:9999999'],
 
             'specs' => ['required', 'array'],
-            'specs.*.category_spec_id' => ['required', 'integer', 'min:1',],
-            'specs.*.options.*' => ['required', 'integer', 'min:1'],
+            'specs.*.id' => ['required', 'integer', 'min:1'],
+            'specs.*.option' => ['required', 'array'],
+            'specs.*.option.*' => ['required', 'integer', 'min:1'],
 
             'img' => ['required', 'image', 'mimes:jpg,jpeg,png,jfif'],
         ];

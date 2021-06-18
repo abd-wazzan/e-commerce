@@ -47,8 +47,8 @@ body{
     @endphp
 @foreach ($category->categorySpecs as $spec)
 <p>{{$spec->name}}</p>
-<input type="hidden" name="specs[{{$counter}}][category_spec_id]" value="{{ $spec->id}}">
-<select name='specs[{{$counter++}}][options][]' class="input-select" required>
+<input type="hidden" name="specs[{{$counter}}][id]" value="{{ $spec->id}}">
+<select name='specs[{{$counter++}}][option][]' class="input-select" required>
     <option value="0">Choose Option</option>
     @foreach ($spec->categoryOptions as $opt)
     <option  value="{{$opt->id}}">{{ $opt->name }}</option>
