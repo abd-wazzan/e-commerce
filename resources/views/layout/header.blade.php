@@ -9,7 +9,7 @@
                     <!-- LOGO -->
                     <div class="col-md-3">
                         <div class="header-logo">
-                            <a href="#" class="logo">
+                            <a href="https://wazzan-e-commerce.herokuapp.com" class="logo">
                                 <img src="{{ asset('img/logo.png') }}" alt="">
                             </a>
                         </div>
