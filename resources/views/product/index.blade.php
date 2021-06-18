@@ -5,7 +5,7 @@
 .add-product{
     display: inline-block !important;
 }
-
+li { cursor: pointer; }
 </style>
 @endsection
 
@@ -36,7 +36,7 @@
                             <ul class="section-tab-nav tab-nav">
                                 {{-- <li class="active"><a data-toggle="tab" href="#tab1">Test</a></li> --}}
                                 @foreach ($subCategories as $subCategory)
-                                <li {{($subCategory->id == ($params['sub'] ?? 0))? 'class=active' : ''}}><a data-toggle="tab" href="#tab1">{{$subCategory->name}}</a></li>
+                                <li {{($subCategory->id == ($params['sub'] ?? 0))? 'class=active' : ''}}><a onclick="refreshWithParam('sub', {{$subCategory->id}})" >{{$subCategory->name}}</a></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -130,6 +130,7 @@ function filter()
     var categorySelect = document.getElementById( "category_select" );
 
     var cat = categorySelect.options[ categorySelect.selectedIndex ].value;
+    if(cat == 0) cat = '';
     insertParam('cat', cat);
 
 
@@ -138,6 +139,34 @@ function filter()
 
     document.location.search = this.search.join('&');
 
+}
+
+function refreshWithParam(key, value) {
+    key = encodeURIComponent(key);
+    value = encodeURIComponent(value);
+
+    // kvp looks like ['key1=value1', 'key2=value2', ...]
+    var kvp = document.location.search.substr(1).split('&');
+    let i=0;
+
+    for(; i<kvp.length; i++){
+        if (kvp[i].startsWith(key + '=')) {
+            let pair = kvp[i].split('=');
+            pair[1] = value;
+            kvp[i] = pair.join('=');
+            break;
+        }
+    }
+
+    if(i >= kvp.length){
+        kvp[kvp.length] = [key,value].join('=');
+    }
+
+    // can return this or...
+    let params = kvp.join('&');
+
+    // reload page with new params
+    document.location.search = params;
 }
 
 </script>
