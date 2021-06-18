@@ -12,16 +12,14 @@
 @section('content')
 <div class="col-md-6 serch-container">
     <div class="header-search">
-        <form>
-            <select class="input-select">
+            <select id="category_select" class="input-select">
                 <option value="0">Choose Category</option>
                 @foreach ($categories as $category)
                 <option {{($category->id == ($params['cat'] ?? 0))? 'selected' : ''}} value="{{$category->id}}">{{ $category->name }}</option>
                 @endforeach
             </select>
-            <input class="input" placeholder="Search here">
-            <button class="search-btn">Search</button>
-        </form>
+            <input id="search" class="input" placeholder="Search here">
+            <button onclick="filter()" class="search-btn">Search</button>
     </div>
 </div>
 <!-- SECTION -->
@@ -101,24 +99,50 @@
 @endsection
 
 @section('additional_js')
-<script>
-function toggleFavorite(product_id){
-    var url = '{{ route("favorite.toggle", ":id") }}';
-    url = url.replace(':id', product_id);
-$.ajax({
-    url: url,
-    method: "get",
-    cache: false,
-    contentType: false,
-    processData: false,
-    dataType: 'json'
-}).done(function(response) {
- console.log("added to favorite");
-}).fail(function(e) {
-    alert("An error occurred. Please try again.");
-}).always(function() {
+<script type="application/javascript">
 
-});
+function insertParam(key, value) {
+    key = encodeURIComponent(key);
+    value = encodeURIComponent(value);
+
+    // kvp looks like ['key1=value1', 'key2=value2', ...]
+    var kvp = document.location.search.substr(1).split('&');
+    let i=0;
+
+    for(; i<kvp.length; i++){
+        if (kvp[i].startsWith(key + '=')) {
+            let pair = kvp[i].split('=');
+            pair[1] = value;
+            kvp[i] = pair.join('=');
+            break;
+        }
+    }
+
+    if(i >= kvp.length){
+        kvp[kvp.length] = [key,value].join('=');
+    }
+
+    // can return this or...
+    let params = kvp.join('&');
+
+    // reload page with new params
+    document.location.search = params;
 }
+
+function filter()
+{
+
+
+    var val = $("#category_select").children("option:selected").val();
+    if(val != 0)
+    insertParam('cat', val);
+
+    val = $("#search").val();
+    if(val != "")
+    insertParam('info', val);
+
+    console.log("filter");
+}
+
 </script>
 @endsection
