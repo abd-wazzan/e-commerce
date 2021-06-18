@@ -27,6 +27,7 @@ class Product extends BaseModel
         'price',
         'category_id',
         'user_id',
+        'img',
     ];
 
     /**

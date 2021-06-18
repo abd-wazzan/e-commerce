@@ -29,6 +29,6 @@ class CategoryController extends Controller
         }])->first();
         if(empty($category->category_id))
         return back();
-        return view('product.add', compact('category'));
+        return view('product.add', compact('category', 'id'));
     }
 }

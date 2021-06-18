@@ -66,8 +66,6 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapAuthRoutes();
 
-        $this->mapFileRoutes();
-
         $this->mapUserRoutes();
     }
 
@@ -91,13 +89,6 @@ class RouteServiceProvider extends ServiceProvider
         Route::prefix('auth')
             ->middleware('web')
             ->group(base_path('routes/Client/auth.php'));
-    }
-
-    protected function mapFileRoutes()
-    {
-        Route::prefix('file')
-            ->middleware('web')
-            ->group(base_path('routes/Client/file.php'));
     }
 
     protected function mapUserRoutes()

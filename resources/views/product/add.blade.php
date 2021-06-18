@@ -24,14 +24,23 @@ body{
 @endsection
 
 @section('content')
-<form class="product-form" method="POST" action="{{ route('product.store') }}">
+<form class="product-form" method="POST" action="{{ route('product.store') }}" enctype="multipart/form-data">
     <h1>Choose Your Product Sepcifications</h1>
     @csrf
 <div class="row d-flex justify-content-center">
-    <input name="name" type="input" class="input product-input" placeholder="Name" required>
-    {{-- <input name="description" type="input" class="input product-input" placeholder="Description" required> --}}
-    <textarea name="description" type="input" class="input product-input" placeholder="Description" maxlength="100" required></textarea>
-    <input name="price" type="input" class="input product-input" placeholder="Price" required>
+    <input name="name" type="input" class="input product-input" placeholder="Name" minlength="3" maxlength="255" required>
+    @if($errors->has('name'))
+    <div class="error">{{ $errors->first('name') }}</div>
+    @endif
+    <textarea name="description" type="input" class="input product-input" placeholder="Description" minlength="10" maxlength="1000" required></textarea>
+    @if($errors->has('description'))
+    <div class="error">{{ $errors->first('description') }}</div>
+    @endif
+    <input name="price" type="number" class="input product-input" placeholder="Price" min=0 required>
+    @if($errors->has('price'))
+    <div class="error">{{ $errors->first('price') }}</div>
+    @endif
+    <input name="category_id" type="hidden" class="input product-input" value="{{$id}}" required>
 </div>
     @php
         $counter = 0
@@ -49,7 +58,10 @@ body{
 <br>
 <label  for="img">Select Image For Product :</label>
 <input  type="file" id="input-img" name="img" accept="image/*" onchange="readURL(this);"/>
-<img    id="img" src="#" alt="image goes here" />
+@if($errors->has('img'))
+<div class="error">{{ $errors->first('img') }}</div>
+@endif
+<img    id="image" src="#" alt="image goes here" />
 <br>
 <button type="submit" class="search-btn">Save</button>
 </form>
@@ -62,7 +74,7 @@ body{
                 var reader = new FileReader();
 
                 reader.onload = function (e) {
-                    $('#img')
+                    $('#image')
                         .attr('src', e.target.result)
                         .width(200)
                         .height(200);
