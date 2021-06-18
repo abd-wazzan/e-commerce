@@ -15,7 +15,7 @@
             <select id="category_select" class="input-select">
                 <option value="0">Choose Category</option>
                 @foreach ($categories as $category)
-                <option {{($category->id == ($params['cat'] ?? 0))? 'selected' : ''}} value="{{$category->id}}">{{ $category->name }}</option>
+                <option {{($category->id == ($params['cat'] ?? 0))? 'selected=true' : ''}} value="{{$category->id}}">{{ $category->name }}</option>
                 @endforeach
             </select>
             <input id="search" class="input" placeholder="Search here" value="{{$params['info'] ?? ''}}">
@@ -101,12 +101,14 @@
 @section('additional_js')
 <script type="application/javascript">
 
+var search = document.location.search.substr(1).split('&');
+
 function insertParam(key, value) {
     key = encodeURIComponent(key);
     value = encodeURIComponent(value);
 
     // kvp looks like ['key1=value1', 'key2=value2', ...]
-    var kvp = document.location.search.substr(1).split('&');
+    var kvp = search;
     let i=0;
 
     for(; i<kvp.length; i++){
@@ -121,27 +123,21 @@ function insertParam(key, value) {
     if(i >= kvp.length){
         kvp[kvp.length] = [key,value].join('=');
     }
-
-    // can return this or...
-    let params = kvp.join('&');
-
-    // reload page with new params
-    document.location.search = params;
 }
 
 function filter()
 {
+    var categorySelect = document.getElementById( "category_select" );
+
+    var cat = categorySelect.options[ categorySelect.selectedIndex ].value;
+    insertParam('cat', cat);
 
 
-    var val = $("#category_select").children("option:selected").val();
-    if(val != 0)
-    insertParam('cat', val);
+    var info = $("#search").val();
+    insertParam('info', info);
 
-    val = $("#search").val();
-    if(val != "")
-    insertParam('info', val);
+    document.location.search = this.search.join('&');
 
-    console.log("filter");
 }
 
 </script>
