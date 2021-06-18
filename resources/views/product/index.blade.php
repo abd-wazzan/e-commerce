@@ -18,7 +18,7 @@
                 <option {{($category->id == ($params['cat'] ?? 0))? 'selected' : ''}} value="{{$category->id}}">{{ $category->name }}</option>
                 @endforeach
             </select>
-            <input id="search" class="input" placeholder="Search here">
+            <input id="search" class="input" placeholder="Search here" value="{{$params['info'] ?? ''}}">
             <button onclick="filter()" class="search-btn">Search</button>
     </div>
 </div>

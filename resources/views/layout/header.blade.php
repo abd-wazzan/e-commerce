@@ -46,7 +46,7 @@
                                                     <h3 class="product-name"><a href="#">{{$cart->product->name}}</a></h3>
                                                     <h4 class="product-price"><span class="qty">{{$cart->qty}}x</span>${{$cart->product->price}}</h4>
                                                 </div>
-                                                <button onclick="toggleCart({{$product->id}})" class="delete"><i class="fa fa-close"></i></button>
+                                                <button onclick="toggleCart({{$cart->product_id}})" class="delete"><i class="fa fa-close"></i></button>
                                             </div>
                                             @endforeach
                                         </div>
