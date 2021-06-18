@@ -133,4 +133,12 @@ class ProductController extends Controller
         $product = $this->product->findProduct($id);
         return view('product.show-product', compact('product'));
     }
+
+    public function viewStore($id)
+    {
+
+        $products = $this->product->getUserStoreProducts($id);
+
+        return view('product.view_store', compact('products'));
+    }
 }

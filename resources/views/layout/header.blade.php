@@ -70,6 +70,14 @@
                                 </a>
                             </div>
                             <!-- /Add a product-->
+                                                        <!-- Add a product -->
+                            <div class="add-product">
+                                <a href="{{route('product.store', auth()->user()->id)}}">
+                                    <i class="fa fa-plus" ></i>
+                                    <span>View Products</span>
+                                </a>
+                            </div>
+                            <!-- /Add a product-->
                         </div>
                     </div>
                     <!-- /ACCOUNT -->

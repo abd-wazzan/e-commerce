@@ -144,4 +144,19 @@ class Product extends BaseModel
             }])->with('categorySpec');
         }])->first();
     }
+
+    public function getUserStoreProducts($id)
+    {
+        $query =  Product::query();
+
+        $query->where('user_id', '=', $id);
+
+
+        $query->with(['productSpecs' => function($spec)
+        {
+            $spec->with('productOptions');
+        }]);
+
+        return $query->orderBy('id', 'DESC')->limit(15)->get();
+    }
 }
