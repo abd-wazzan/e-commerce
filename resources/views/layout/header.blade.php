@@ -9,7 +9,7 @@
                     <!-- LOGO -->
                     <div class="col-md-3">
                         <div class="header-logo">
-                            <a href="https://wazzan-e-commerce.herokuapp.com" class="logo">
+                            <a href="{{route('home')}}" class="logo">
                                 <img src="{{ asset('img/logo.png') }}" alt="">
                             </a>
                         </div>
@@ -72,7 +72,7 @@
                             <!-- /Add a product-->
                                                         <!-- Add a product -->
                             <div class="add-product">
-                                <a href="{{route('product.store', auth()->user()->id)}}">
+                                <a href="{{route('store.show', auth()->user()->id)}}">
                                     <i class="fa fa-plus" ></i>
                                     <span>View Products</span>
                                 </a>

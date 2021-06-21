@@ -19,7 +19,7 @@ use Kouja\ProjectAssistant\Helpers\ResponseHelper;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->middleware('auth');
+Route::get('/', [HomeController::class, 'index'])->middleware('auth')->name('home');
 
 Route::get('/test', function () {
     return view('layout.app');
@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
         Route::post('store', [ProductController::class, 'store'])->name('product.store');
         Route::get('/cat', [CategoryController::class, 'getCategories'])->name('chose-cat');
         Route::get('show/{id}', [ProductController::class, 'showProduct'])->name('product.show');
-        Route::get('store/{id}', [ProductController::class, 'viewStore'])->name('product.store');
+        Route::get('store/{id}', [ProductController::class, 'viewStore'])->name('store.show');
         });
 
     Route::prefix('favorite')->group(function () {
