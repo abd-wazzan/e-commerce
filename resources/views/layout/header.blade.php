@@ -61,7 +61,7 @@
                                     </div>
                                 </div>
                                 <!-- /Cart -->
-                            @endauth
+
                             <!-- Add a product -->
                             <div class="add-product">
                                 <a href="{{route('chose-cat')}}">
@@ -78,6 +78,7 @@
                                 </a>
                             </div>
                             <!-- /Add a product-->
+                            @endauth
                         </div>
                     </div>
                     <!-- /ACCOUNT -->
