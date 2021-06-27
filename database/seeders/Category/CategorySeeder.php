@@ -52,7 +52,7 @@ class CategorySeeder extends Seeder
             ],
             [
                 'id' => 5,
-                'name' => 'Labtops',
+                'name' => 'Laptops',
                 'category_id' => 1,
                 'created_at' => $now,
                 'updated_at' => $now,

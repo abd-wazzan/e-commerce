@@ -18,157 +18,305 @@ class CategoryOptionSeeder extends Seeder
         DB::statement("SET foreign_key_checks=0");
         DB::table('category_options')->truncate();
         DB::statement("SET foreign_key_checks=1");
-
+        $i = 0;
         $now = Carbon::now();
         $options = [
+            //Mobiles-Company
             [
-                'id' => 1,
+                'id' => ++$i,
                 'category_spec_id' => 1,
-                'name' => 'HP',
+                'name' => 'Apple',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
-                'id' => 2,
+                'id' => ++$i,
                 'category_spec_id' => 1,
-                'name' => 'ASUS',
+                'name' => 'Huawei',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
-                'id' => 3,
+                'id' => ++$i,
                 'category_spec_id' => 1,
-                'name' => 'Dell',
+                'name' => 'Sony',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
-                'id' => 4,
+                'id' => ++$i,
                 'category_spec_id' => 1,
-                'name' => 'Lenovo',
+                'name' => 'Samsung',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
+            //Mobiles-CPU
             [
-                'id' => 5,
+                'id' => ++$i,
                 'category_spec_id' => 2,
                 'name' => 'Kirin 710',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
-                'id' => 6,
+                'id' => ++$i,
                 'category_spec_id' => 2,
                 'name' => 'Snapdragon 630',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
-                'id' => 7,
+                'id' => ++$i,
                 'category_spec_id' => 2,
                 'name' => 'Snapdragon 700',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
+            //Mobiles-RAM
             [
-                'id' => 8,
+                'id' => ++$i,
                 'category_spec_id' => 3,
                 'name' => '2GB',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
-                'id' => 9,
+                'id' => ++$i,
                 'category_spec_id' => 3,
                 'name' => '4GB',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
-                'id' => 10,
+                'id' => ++$i,
                 'category_spec_id' => 3,
                 'name' => '8GB',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
-                'id' => 11,
+                'id' => ++$i,
                 'category_spec_id' => 3,
-                'name' => '16GB',
+                'name' => '12GB',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
+            //Mobiles-Color
             [
-                'id' => 12,
+                'id' => ++$i,
                 'category_spec_id' => 4,
                 'name' => 'Black',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
-                'id' => 13,
+                'id' => ++$i,
                 'category_spec_id' => 4,
                 'name' => 'White',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
-                'id' => 14,
+                'id' => ++$i,
                 'category_spec_id' => 4,
                 'name' => 'Red',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
-                'id' => 15,
+                'id' => ++$i,
                 'category_spec_id' => 4,
                 'name' => 'Blue',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
+            //Mobiles-Storage
             [
-                'id' => 16,
+                'id' => ++$i,
                 'category_spec_id' => 5,
+                'name' => '32GB',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+
+            [
+                'id' => ++$i,
+                'category_spec_id' => 5,
+                'name' => '64TB',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => ++$i,
+                'category_spec_id' => 5,
+                'name' => '128TB',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => ++$i,
+                'category_spec_id' => 5,
+                'name' => '256GB',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => ++$i,
+                'category_spec_id' => 5,
+                'name' => '512GB',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            //
+
+            //Labtops-Company
+            [
+                'id' => ++$i,
+                'category_spec_id' => 6,
+                'name' => 'HP',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => ++$i,
+                'category_spec_id' => 6,
+                'name' => 'ASUS',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => ++$i,
+                'category_spec_id' => 6,
+                'name' => 'Dell',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => ++$i,
+                'category_spec_id' => 6,
+                'name' => 'Lenovo',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            //Labtops-CPU
+            [
+                'id' => ++$i,
+                'category_spec_id' => 7,
+                'name' => 'Intel Core i3',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => ++$i,
+                'category_spec_id' => 7,
+                'name' => 'Intel Core i5',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => ++$i,
+                'category_spec_id' => 7,
+                'name' => 'Intel Core i7',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+
+            //Labtops-RAM
+            [
+                'id' => ++$i,
+                'category_spec_id' => 8,
+                'name' => '4GB',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => ++$i,
+                'category_spec_id' => 8,
+                'name' => '8GB',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => ++$i,
+                'category_spec_id' => 8,
+                'name' => '16GB',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => ++$i,
+                'category_spec_id' => 8,
+                'name' => '32GB',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            //Labtops-Color
+            [
+                'id' => ++$i,
+                'category_spec_id' => 9,
+                'name' => 'Black',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => ++$i,
+                'category_spec_id' => 9,
+                'name' => 'White',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => ++$i,
+                'category_spec_id' => 9,
+                'name' => 'Red',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => ++$i,
+                'category_spec_id' => 9,
+                'name' => 'Blue',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            //Labtops-Storage
+            [
+                'id' => ++$i,
+                'category_spec_id' => 10,
                 'name' => '512GB HDD',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
 
             [
-                'id' => 17,
-                'category_spec_id' => 5,
+                'id' => ++$i,
+                'category_spec_id' => 10,
                 'name' => '1TB HDD',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
-                'id' => 18,
-                'category_spec_id' => 5,
+                'id' => ++$i,
+                'category_spec_id' => 10,
                 'name' => '2TB HDD',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
-                'id' => 19,
-                'category_spec_id' => 5,
+                'id' => ++$i,
+                'category_spec_id' => 10,
                 'name' => '512GB SSD',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
-                'id' => 20,
-                'category_spec_id' => 5,
+                'id' => ++$i,
+                'category_spec_id' => 10,
                 'name' => '1TB SSD',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
-            [
-                'id' => 21,
-                'category_spec_id' => 6,
-                'name' => '1TB SSD',
-                'created_at' => $now,
-                'updated_at' => $now,
-            ],
+            //
         ];
 
         DB::table('category_options')->insert($options);
