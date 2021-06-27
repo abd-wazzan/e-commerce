@@ -5,6 +5,7 @@ namespace Database\Seeders\Category;
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+
 class CategorySeeder extends Seeder
 {
     /**
@@ -58,8 +59,29 @@ class CategorySeeder extends Seeder
             ],
             [
                 'id' => 6,
-                'name' => 'Smart Watchs',
-                'category_id' => 1,
+                'name' => 'T-shirts',
+                'category_id' => 2,
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => 7,
+                'name' => 'Pants',
+                'category_id' => 2,
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => 8,
+                'name' => 'Catenaries',
+                'category_id' => 3,
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => 9,
+                'name' => 'Rings',
+                'category_id' => 3,
                 'created_at' => $now,
                 'updated_at' => $now,
             ],

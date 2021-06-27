@@ -16,7 +16,7 @@
                     </div>
                     <!-- /LOGO -->
                     <!-- ACCOUNT -->
-                    <div class="col-md-4 clearfix pull-right">
+                    <div class="col-md-5 clearfix pull-right">
                         <div class="header-ctn">
                             @auth
                             <!-- Wishlist -->
@@ -62,22 +62,24 @@
                                 </div>
                                 <!-- /Cart -->
 
+                            <!-- show Your Products -->
+                            <div class="add-product">
+                                <a href="{{route('store.show', auth()->user()->id)}}">
+                                    <i class="fas fa-shopping-basket" ></i>
+                                    <span> View Products</span>
+                                </a>
+                            </div>
+                            <!-- /show Your Products-->
+
                             <!-- Add a product -->
                             <div class="add-product">
                                 <a href="{{route('chose-cat')}}">
                                     <i class="fa fa-plus" ></i>
-                                    <span>Add a product</span>
+                                    <span>Add product</span>
                                 </a>
                             </div>
                             <!-- /Add a product-->
-                                                        <!-- Add a product -->
-                            <div class="add-product">
-                                <a href="{{route('store.show', auth()->user()->id)}}">
-                                    <i class="fa fa-plus" ></i>
-                                    <span>View Products</span>
-                                </a>
-                            </div>
-                            <!-- /Add a product-->
+
                             @endauth
                         </div>
                     </div>

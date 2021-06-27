@@ -499,6 +499,7 @@ textarea.input {
 
 .header-search {
     padding: 15px 0px;
+    display: flex;
 }
 
 .header-search form {

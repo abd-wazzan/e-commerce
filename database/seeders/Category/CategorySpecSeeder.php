@@ -21,7 +21,7 @@ class CategorySpecSeeder extends Seeder
         DB::statement("SET foreign_key_checks=1");
 
         $now = Carbon::now();
-        $specs=[
+        $specs = [
             [
                 'id' => 1,
                 'category_id' => 4,
@@ -57,10 +57,92 @@ class CategorySpecSeeder extends Seeder
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
+            [
+                'id' => 6,
+                'category_id' => 5,
+                'name' => 'Company',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => 7,
+                'category_id' => 5,
+                'name' => 'CPU',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => 8,
+                'category_id' => 5,
+                'name' => 'RAM',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => 9,
+                'category_id' => 5,
+                'name' => 'Color',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => 10,
+                'category_id' => 5,
+                'name' => 'Storge',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => 11,
+                'category_id' => 5,
+                'name' => 'Company',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => 12,
+                'category_id' => 5,
+                'name' => 'CPU',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => 13,
+                'category_id' => 5,
+                'name' => 'RAM',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => 14,
+                'category_id' => 5,
+                'name' => 'Color',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => 15,
+                'category_id' => 5,
+                'name' => 'Storge',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => 16,
+                'category_id' => 6,
+                'name' => 'Storge',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => 16,
+                'category_id' => 7,
+                'name' => 'Storge',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
         ];
 
         DB::table('category_specs')->insert($specs);
     }
 }
-
-

@@ -162,6 +162,13 @@ class CategoryOptionSeeder extends Seeder
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
+            [
+                'id' => 21,
+                'category_spec_id' => 6,
+                'name' => '1TB SSD',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
         ];
 
         DB::table('category_options')->insert($options);
