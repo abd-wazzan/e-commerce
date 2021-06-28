@@ -30,7 +30,7 @@ class HomeController extends Controller
         $info = $request->get('info');
         $filter = $request->get('filter', []);
 
-        $categories = $this->category->getData(['category_id' => null], ['categories']);
+        $categories = $this->category->getData(['category_id' => null], ['categories'], ['*'], 'ASC');
 
         $subCategories = !!$categoryId ? $this->category->getData(['category_id' => $categoryId], ['categorySpecs' => function ($categorySpecs) {
             return $categorySpecs->with('categoryOptions');

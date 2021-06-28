@@ -44,7 +44,7 @@ body{
                         </div>
                         <div class="form-group row mb-4">
                             <div class="col-md-8 offset-md-4">
-                                <a href="https://wazzan-e-commerce.herokuapp.com/auth/signup">
+                                <a href="{{route('signup')}}">
                                     Register a new account !
                                 </a>
                             </div>

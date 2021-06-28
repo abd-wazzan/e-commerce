@@ -54,7 +54,7 @@ li { cursor: pointer; }
                                     <!-- product -->
                                     <div class="product">
                                         <div class="product-img">
-                                            <img src={{$product->img ?? "./img/product05.png"}} width="250" height="250" alt="">
+                                            <img src={{$product->img ?? "./img/default-product.jpg"}} width="250" height="250" alt="">
                                         </div>
                                         <div class="product-body">
                                             <p class="product-category">{{$product->category->name}}</p>
@@ -68,7 +68,8 @@ li { cursor: pointer; }
                                                 <i class="fa fa-star"></i>
                                             </div>
                                             <div class="product-btns">
-                                                <button onclick="toggleFavorite({{$product->id}})" class="add-to-wishlist"><i class="fa fa-heart-o"></i><span
+                                                {{-- <p>{{json_encode(auth()->user()->favorites->firstWhere('product_id', $product->id))}}</p> --}}
+                                                <button added="{{!empty(auth()->user()->favorites->firstWhere('product_id', $product->id))? 'true' : 'false'}}" onclick="toggleFavorite({{$product->id}})" class="add-to-wishlist"><i class="fa fa-heart-o"></i><span
                                                         class="tooltipp">add to wishlist</span></button>
                                                 <button onclick="showProduct({{$product->id}})" class="quick-view"><i class="fa fa-eye"></i><span
                                                     class="tooltipp">quick view</span></button>

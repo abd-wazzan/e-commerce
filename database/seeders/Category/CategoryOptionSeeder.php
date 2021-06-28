@@ -142,14 +142,14 @@ class CategoryOptionSeeder extends Seeder
             [
                 'id' => ++$i,
                 'category_spec_id' => 5,
-                'name' => '64TB',
+                'name' => '64GB',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
                 'id' => ++$i,
                 'category_spec_id' => 5,
-                'name' => '128TB',
+                'name' => '128GB',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
