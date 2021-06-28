@@ -203,8 +203,6 @@ class CategoryOptionSeeder extends Seeder
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
-            //
-
             //Labtops-Company
             [
                 'id' => ++$i,

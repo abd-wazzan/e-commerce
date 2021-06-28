@@ -68,35 +68,35 @@ class CategorySpecSeeder extends Seeder
             //
             //Laptops
             [
-                'id' => 6,
+                'id' => 7,
                 'category_id' => 5,
                 'name' => 'Company',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
-                'id' => 7,
+                'id' => 8,
                 'category_id' => 5,
                 'name' => 'CPU',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
-                'id' => 8,
+                'id' => 9,
                 'category_id' => 5,
                 'name' => 'RAM',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
-                'id' => 9,
+                'id' => 10,
                 'category_id' => 5,
                 'name' => 'Color',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
-                'id' => 10,
+                'id' => 11,
                 'category_id' => 5,
                 'name' => 'Storage',
                 'created_at' => $now,
