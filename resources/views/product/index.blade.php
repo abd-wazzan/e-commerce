@@ -31,7 +31,7 @@ li { cursor: pointer; }
                 <!-- section title -->
                 <div class="col-md-12">
                     <div class="section-title">
-                        <h3 class="title">New Products</h3>
+                        <h3 class="title">Our Products</h3>
                         <div class="section-nav">
                             <ul class="section-tab-nav tab-nav">
                                 {{-- <li class="active"><a data-toggle="tab" href="#tab1">Test</a></li> --}}
@@ -96,6 +96,54 @@ li { cursor: pointer; }
         <!-- /container -->
     </div>
     <!-- /SECTION -->
+
+    <!-- HOT DEAL SECTION -->
+    <div id="hot-deal" class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="hot-deal">
+                        <ul class="hot-deal-countdown">
+                            <li>
+                                <div>
+                                    <h3>ASUS</h3>
+                                    <span><i class="fas fa-laptop"></i></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h3>DELL</h3>
+                                    <span><i class="fas fa-laptop"></i></span>
+
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h3>Lenovo</h3>
+                                    <span><i class="fas fa-laptop"></i></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h3>Sony</h3>
+                                    <span><i class="fas fa-laptop"></i></span>
+                                </div>
+                            </li>
+                        </ul>
+                        <h2 class="text-uppercase">hot deal With Many Companies</h2>
+                        <p>New Collection Every Day</p>
+                        <a class="primary-btn cta-btn" href="{{route('chose-cat')}}">Be Seller With Us</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /HOT DEAL SECTION -->
+
 
 @endsection
 

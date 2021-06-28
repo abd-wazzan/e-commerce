@@ -11,7 +11,7 @@
                             <h3 class="footer-title">About Us</h3>
                             <p>online market that allows you to browse a wide range of products, buy and sell them within our store.</p>
                             <ul class="footer-links">
-                                <li><a href="#"><i class="fa fa-map-marker"></i>Aleppo - Alfurkan</a></li>
+                                <li><a href="#"><i class="fa fa-map-marker"></i>Aleppo</a></li>
                                 <li><a href="#"><i class="fa fa-phone"></i>+021-75-255-84</a></li>
                                 <li><a href="#"><i class="fa fa-envelope-o"></i>electro-market@email.com</a></li>
                             </ul>
@@ -22,7 +22,7 @@
                             <button class="btn btn-secondary dropdown-toggle drdn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"> About Us
                             </button>
                             <ul class="dropdown-menu drdnm" aria-labelledby="dropdownMenuButton1">
-                                <li><a href="#"><i class="fa fa-map-marker"></i>Aleppo - Alfurkan</a></li>
+                                <li><a href="#"><i class="fa fa-map-marker"></i>Aleppo</a></li>
                                 <li><a href="#"><i class="fa fa-phone"></i>+021-75-255-84</a></li>
                                 <li><a href="#"><i class="fa fa-envelope-o"></i>electro-market@email.com</a></li>
                             </ul>
@@ -31,9 +31,9 @@
                         <div class="footer">
                             <h3 class="footer-title">Categories</h3>
                             <ul class="footer-links">
-                                <li><a href="#">Jewlery</a></li>
-                                <li><a href="#">Clothes</a></li>
                                 <li><a href="#">Electronic Devices</a></li>
+                                <li><a href="#">Clothes</a></li>
+                                <li><a href="#">Jewlery</a></li>
                             </ul>
                         </div>
                     </div>
@@ -42,9 +42,9 @@
                             <button class="btn btn-secondary dropdown-toggle drdn" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"> Categories
                             </button>
                             <ul class="dropdown-menu drdnm" aria-labelledby="dropdownMenuButton2">
-                                <li><a href="#">Jewlery</a></li>
-                                <li><a href="#">Clothes</a></li>
-                                <li><a href="#">Electronic Devices</a></li>
+                                <li><a href="{{route('home')}}">Electronic Devices</a></li>
+                                <li><a href="{{route('home')}}">Clothes</a></li>
+                                <li><a href="{{route('home')}}">Jewlery</a></li>
                             </ul>
                     </div>
                     <div class="clearfix visible-xs"></div>
@@ -76,11 +76,10 @@
                         <div class="footer">
                             <h3 class="footer-title">Service</h3>
                             <ul class="footer-links">
-                                <li><a href="#">My Account</a></li>
-                                <li><a href="#">View Cart</a></li>
-                                <li><a href="#">Wishlist</a></li>
-                                <li><a href="#">Track My Order</a></li>
-                                <li><a href="#">Help</a></li>
+                                <li><a href="{{route('home')}}">My Account</a></li>
+                                <li><a href="{{route('home')}}">View Cart</a></li>
+                                <li><a href="{{route('home')}}">Wishlist</a></li>
+                                <li><a href="{{route('home')}}">Help</a></li>
                             </ul>
                         </div>
                     </div>
@@ -89,11 +88,10 @@
                             <button class="btn btn-secondary dropdown-toggle drdn" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false"> Service
                             </button>
                             <ul class="dropdown-menu drdnm" aria-labelledby="dropdownMenuButton4">
-                                <li><a href="#">My Account</a></li>
-                                <li><a href="#">View Cart</a></li>
-                                <li><a href="#">Wishlist</a></li>
-                                <li><a href="#">Track My Order</a></li>
-                                <li><a href="#">Help</a></li>
+                                <li><a href="{{route('home')}}">My Account</a></li>
+                                <li><a href="{{route('home')}}">View Cart</a></li>
+                                <li><a href="{{route('home')}}">Wishlist</a></li>
+                                <li><a href="{{route('home')}}">Help</a></li>
                             </ul>
                     </div>
                 </div>

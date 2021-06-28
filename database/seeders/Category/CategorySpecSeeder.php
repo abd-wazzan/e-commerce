@@ -58,6 +58,13 @@ class CategorySpecSeeder extends Seeder
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
+            [
+                'id' => 6,
+                'category_id' => 4,
+                'name' => 'Camera',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
             //
             //Laptops
             [

@@ -7,25 +7,13 @@ body{
 }
 .choose-cat .btn-default {
     height: 60px;
-    margin: 10% 25%;
+    margin: 10% 20%;
+    width: 150px;
+    font-size: 23px;
 }
-@media only screen and (min-width: 1202px) {
-    form{
+form {
     width: 450px;
-    margin: 200px 400px;
-    }
-}
-@media only screen and (max-width: 1201px) {
-    form{
-    width: 450px;
-    margin: 200px 200px;
-    }
-}
-@media only screen and (max-width: 767px) {
-    form{
-    width: 450px;
-    margin: 200px 20px;
-    }
+    margin: 200px auto;
 }
 
 </style>
