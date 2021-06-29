@@ -24,6 +24,9 @@ body{
                             <i class="far fa-envelope"></i>
                             <div class="col-xs-10 col-sm-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="Email">
+                                @if($errors->has('email'))
+                                <div class="error">{{ $errors->first('email') }}</div>
+                                @endif
                             </div>
                         </div>
 
