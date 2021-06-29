@@ -65,8 +65,8 @@
                             <!-- show Your Products -->
                             <div class="add-product">
                                 <a href="{{route('store.show', auth()->user()->id)}}">
-                                    <i class="fas fa-shopping-basket" ></i>
-                                    <span> View Products</span>
+                                    <i class="fas fa-store-alt"></i>
+                                    <span> Your Products</span>
                                 </a>
                             </div>
                             <!-- /show Your Products-->
@@ -74,7 +74,7 @@
                             <!-- Add a product -->
                             <div class="add-product">
                                 <a href="{{route('chose-cat')}}">
-                                    <i class="fa fa-plus" ></i>
+                                    <i class="fas fa-cart-plus"></i>
                                     <span>Add product</span>
                                 </a>
                             </div>

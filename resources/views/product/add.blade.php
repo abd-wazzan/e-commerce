@@ -45,7 +45,7 @@ body{
 
 @section('content')
 <form class="product-form" method="POST" action="{{ route('product.store') }}" enctype="multipart/form-data">
-    <h1>Product Sepcifications</h1>
+    <h1>{{$category->name}} Sepcifications</h1>
     @csrf
 <div class="row d-flex justify-content-center">
     <input name="name" type="input" class="input product-input" placeholder="Name" minlength="3" maxlength="255" required>
