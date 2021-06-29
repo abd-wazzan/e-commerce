@@ -25,6 +25,9 @@
                             <i class="far fa-envelope"></i>
                             <div class="col-xs-10 col-sm-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="Email">
+                                @if($errors->has('email'))
+                                <div class="error">{{ $errors->first('email') }}</div>
+                                @endif
                             </div>
                         </div>
 
@@ -32,6 +35,9 @@
                             <i class="far fa-user"></i>
                             <div class="col-xs-10 col-sm-6">
                                 <input id="first-name" type="text" class="form-control" name="first_name" required placeholder="First Name">
+                                @if($errors->has('first_name'))
+                                <div class="error">{{ $errors->first('first_name') }}</div>
+                                @endif
                             </div>
                         </div>
 
@@ -39,6 +45,9 @@
                             <i class="far fa-user"></i>
                             <div class="col-xs-10 col-sm-6">
                                 <input id="last-name" type="text" class="form-control" name="last_name" required placeholder="Last Name">
+                                @if($errors->has('last_name'))
+                                <div class="error">{{ $errors->first('last_name') }}</div>
+                                @endif
                             </div>
                         </div>
 
@@ -46,6 +55,9 @@
                             <i class="fas fa-lock"></i>
                             <div class="col-xs-10 col-sm-6">
                                 <input id="password" type="password" class="form-control" name="password" minlength="4" maxlength="16" required placeholder="Password">
+                                @if($errors->has('password'))
+                                <div class="error">{{ $errors->first('password') }}</div>
+                                @endif
                                 <i class="far fa-eye pass-icon pull-right" onclick="show_password()"></i>
                             </div>
                         </div>
@@ -54,6 +66,9 @@
                             <i class="fas fa-phone"></i>
                             <div class="col-xs-10 col-sm-6">
                                 <input id="phone" type="number" class="form-control" name="phone" required placeholder="Phone">
+                                @if($errors->has('phone'))
+                                <div class="error">{{ $errors->first('phone') }}</div>
+                                @endif
                             </div>
                         </div>
 
