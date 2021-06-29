@@ -73,6 +73,15 @@
 							</div>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
+                            @foreach ($product->productSpecs as $spec)
+                            <h3>{{$spec->categorySpec->name}}</h3>
+                            @foreach ($spec->productOptions as $option)
+                            <h4>{{$option->categoryOption->name}}</h4>
+                            @endforeach
+                            @endforeach
+
+
+
 							<div class="product-options">
 								<label>
 									Size
