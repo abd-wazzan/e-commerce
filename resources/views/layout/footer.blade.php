@@ -6,7 +6,7 @@
             <div class="container">
                 <!-- row -->
                 <div class="row">
-                    <div class="col-md-3 col-xs-6 hid">
+                    <div class="col-md-3 col-sm-3 col-xs-6 hid">
                         <div class="footer">
                             <h3 class="footer-title">About Us</h3>
                             <p>online market that allows you to browse a wide range of products, buy and sell them within our store.</p>
@@ -27,7 +27,7 @@
                                 <li><a href="#"><i class="fa fa-envelope-o"></i>electro-market@email.com</a></li>
                             </ul>
                     </div>
-                    <div class="col-md-3 col-xs-6 hid">
+                    <div class="col-md-3 col-sm-3 col-xs-6  hid">
                         <div class="footer">
                             <h3 class="footer-title">Categories</h3>
                             <ul class="footer-links">
@@ -48,7 +48,7 @@
                             </ul>
                     </div>
                     <div class="clearfix visible-xs"></div>
-                    <div class="col-md-3 col-xs-6 hid">
+                    <div class="col-md-3 col-sm-3 col-xs-6 hid">
                         <div class="footer">
                             <h3 class="footer-title">Information</h3>
                             <ul class="footer-links">
@@ -72,7 +72,7 @@
                                 <li><a href="#">Terms & Conditions</a></li>
                             </ul>
                     </div>
-                    <div class="col-md-3 col-xs-6 hid">
+                    <div class="col-md-3 col-sm-3 col-xs-6 hid">
                         <div class="footer">
                             <h3 class="footer-title">Service</h3>
                             <ul class="footer-links">
@@ -102,7 +102,7 @@
         </div>
         <!-- /top footer -->
         <!-- bottom footer -->
-        <div id="bottom-footer" class="section">
+        <div id="bottom-footer" class="section" style="padding-top:0px;">
             <div class="container">
                 <!-- row -->
                 <div class="row">

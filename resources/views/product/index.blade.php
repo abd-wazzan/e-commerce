@@ -69,7 +69,9 @@ li { cursor: pointer; }
                                             </div>
                                             <div class="product-btns">
                                                 {{-- <p>{{json_encode(auth()->user()->favorites->firstWhere('product_id', $product->id))}}</p> --}}
-                                                <button added="{{!empty(auth()->user()->favorites->firstWhere('product_id', $product->id))? 'true' : 'false'}}" onclick="toggleFavorite({{$product->id}})" class="add-to-wishlist"><i class="fa fa-heart-o"></i><span
+                                                <button id="fav" added="{{!empty(auth()->user()->favorites->firstWhere('product_id', $product->id))? 'true' : 'false'}}" onclick="toggleFavorite({{$product->id}})" class="add-to-wishlist">
+                                                    <i id="heart" class="fa fa-heart-o"></i>
+                                                    <span
                                                         class="tooltipp">add to wishlist</span></button>
                                                 <button onclick="showProduct({{$product->id}})" class="quick-view"><i class="fa fa-eye"></i><span
                                                     class="tooltipp">quick view</span></button>
@@ -83,7 +85,58 @@ li { cursor: pointer; }
                                     <!-- /product -->
                                     @endforeach
                                 </div>
-                                <div id="slick-nav-1" class="products-slick-nav"></div>
+                                <div id="slick-nav-1" class="products-slick-nav2"></div>
+                            </div>
+                            <!-- /tab -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Products tab & slick -->
+                <!-- Products tab & slick -->
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="products-tabs">
+                            <!-- tab -->
+                            <div id="tab1" class="tab-pane active">
+                                <div class="products-slick" data-nav="#slick-nav-1">
+                                    @foreach ($products as $product)
+                                    <!-- product -->
+                                    <div class="product">
+                                        <div class="product-img">
+                                            <img src={{$product->img ?? "./img/default-product.jpg"}} width="250" height="250" alt="">
+                                        </div>
+                                        <div class="product-body">
+                                            <p class="product-category">{{$product->category->name}}</p>
+                                            <h3 class="product-name"><a href="#">{{$product->name}}</a></h3>
+                                            <h4 class="product-price">${{$product->price}}</h4>
+                                            <div class="product-rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <div class="product-btns">
+                                                {{-- <p>{{json_encode(auth()->user()->favorites->firstWhere('product_id', $product->id))}}</p> --}}
+                                                <button added="{{!empty( auth()->user()->favorites->firstWhere('product_id', $product->id) )? 'true' : 'false'}}" onclick="toggleFavorite({{$product->id}})" class="add-to-wishlist">
+                                                    <i class="fa fa-heart-o"></i>
+                                                    <span class="tooltipp">add to wishlist</span>
+                                                </button>
+
+                                                <button onclick="showProduct({{$product->id}})" class="quick-view"><i class="fa fa-eye"></i>
+                                                    <span class="tooltipp">quick view</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="add-to-cart">
+                                            <button onclick="toggleCart({{$product->id}})" class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to
+                                                cart</button>
+                                        </div>
+                                    </div>
+                                    <!-- /product -->
+                                    @endforeach
+                                </div>
+                                <div id="slick-nav-1" class="products-slick-nav2"></div>
                             </div>
                             <!-- /tab -->
                         </div>
@@ -147,8 +200,17 @@ li { cursor: pointer; }
 
 @endsection
 
+
 @section('additional_js')
 <script type="application/javascript">
+$var = document.getElementById("fav").element.getAttribute("added");
+if($var.valueOf){
+    document.getElementById("heart").style.backgroundColor = "red";
+}
+else{
+
+    document.getElementById("heart").style.color = "blue";
+}
 
 var search = document.location.search.substr(1).split('&');
 
