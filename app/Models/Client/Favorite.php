@@ -5,6 +5,7 @@ namespace App\Models\Client;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Kouja\ProjectAssistant\Bases\BaseModel;
+use App\Models\Product\Product;
 
 class Favorite extends BaseModel
 {
