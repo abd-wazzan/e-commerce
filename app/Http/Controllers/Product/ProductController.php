@@ -145,8 +145,8 @@ class ProductController extends Controller
     public function delete(Request $request, $id)
     {
         $product = $this->product->getData(['user_id' => $request->user()->id, 'id' => $id]);
-        if(empty($product))
-        return redirect()->back();
+        if (empty($product))
+            return back();
         $this->product->softDeleteData(['id' => $id]);
         return redirect()->route('home');
     }
