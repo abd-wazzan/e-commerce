@@ -26,6 +26,9 @@ li { cursor: pointer; }
                 <!-- Products tab & slick -->
                 <div class="col-md-12">
                     <div class="row">
+                        @if(count($products) == 0)
+                            <h1> You Do not  </h1>
+                        @endif
                         <div class="products-tabs">
                             <!-- tab -->
                             <div id="tab1" class="tab-pane active">

@@ -17,12 +17,11 @@ class SignUpRequest extends BaseFormRequest
     public function rules()
     {
         return [
-            'email' => ['required','email',Rule::unique('users','email')],
-            'password' =>   ['required','string','min:4','max:16'],
-            'first_name' => ['required','string'],
-            'last_name' =>  ['required','string'],
-            'phone' => ['nullable', 'min:9']
+            'email' => ['required', 'email', Rule::unique('users', 'email')],
+            'password' =>   ['required', 'string', 'min:4', 'max:16'],
+            'first_name' => ['required', 'string'],
+            'last_name' =>  ['required', 'string'],
+            'phone' => ['nullable', 'string', 'min:9', Rule::unique('users', 'phone')]
         ];
     }
-
 }

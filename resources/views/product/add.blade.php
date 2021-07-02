@@ -49,7 +49,7 @@ body{
     @csrf
 <div class="row d-flex justify-content-center">
     <input name="name" type="input" class="input product-input" placeholder="Name" minlength="3" maxlength="255" required>
-    @if($errors->has('name'))
+@if($errors->has('name'))
     <div class="error">{{ $errors->first('name') }}</div>
     @endif
     <textarea name="description" type="input" class="input product-input" placeholder="Description" minlength="10" maxlength="1000" required></textarea>

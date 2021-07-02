@@ -6,6 +6,40 @@
     display: inline-block !important;
 }
 li { cursor: pointer; }
+
+:root {
+--size: 35px;
+--frames: 62;
+}
+
+input.loveclass{
+display: none;
+}
+.hearth {
+background-image: url('https://assets.codepen.io/23500/Hashflag-AppleEvent.svg');
+background-size: calc(var(--size) * var(--frames)) var(--size);
+background-repeat: no-repeat;
+background-position-x: calc(var(--size) * (var(--frames) * -1 + 2));
+background-position-y: calc(var(--size) * 0.02);
+width: var(--size);
+height: var(--size);
+}
+
+input:checked + .hearth {
+animation: like 1s steps(calc(var(--frames) - 3));
+animation-fill-mode: forwards;
+}
+
+@keyframes like {
+0% {
+background-position-x: 0;
+}
+100% {
+background-position-x: calc(var(--size) * (var(--frames) * -1 + 3));
+}
+}
+
+
 </style>
 @endsection
 
@@ -60,6 +94,7 @@ li { cursor: pointer; }
                                             <p class="product-category">{{$product->category->name}}</p>
                                             <h3 class="product-name"><a href="#">{{$product->name}}</a></h3>
                                             <h4 class="product-price">${{$product->price}}</h4>
+                                            <a href="{{route('store.show',$product->user->id)}}" class="product-price">{{$product->user->name}}</a>
                                             <div class="product-rating">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
@@ -69,8 +104,11 @@ li { cursor: pointer; }
                                             </div>
                                             <div class="product-btns">
                                                 {{-- <p>{{json_encode(auth()->user()->favorites->firstWhere('product_id', $product->id))}}</p> --}}
-                                                <button id="fav" added="{{!empty(auth()->user()->favorites->firstWhere('product_id', $product->id))? 'true' : 'false'}}" onclick="toggleFavorite({{$product->id}})" class="add-to-wishlist">
-                                                    <i id="heart" class="fa fa-heart-o"></i>
+                                                <button id="fav" class="add-to-wishlist">
+                                                    <label class="like">
+                                                        <input {{!empty(auth()->user()->favorites->firstWhere('product_id', $product->id))? 'checked' : ''}}  onclick="toggleFavorite({{$product->id}})" class="loveclass" type="checkbox"/>
+                                                        <div class="hearth"/>
+                                                    </label>
                                                     <span
                                                         class="tooltipp">add to wishlist</span></button>
                                                 <button onclick="showProduct({{$product->id}})" class="quick-view"><i class="fa fa-eye"></i><span
@@ -116,10 +154,13 @@ li { cursor: pointer; }
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>
-                                            <div class="product-btns">
+                                            <div class="product-btns" style="display: inline-flex";>
                                                 {{-- <p>{{json_encode(auth()->user()->favorites->firstWhere('product_id', $product->id))}}</p> --}}
                                                 <button added="{{!empty( auth()->user()->favorites->firstWhere('product_id', $product->id) )? 'true' : 'false'}}" onclick="toggleFavorite({{$product->id}})" class="add-to-wishlist">
-                                                    <i class="fa fa-heart-o"></i>
+                                                    <label class="like">
+                                                        <input class="loveclass" type="checkbox"/>
+                                                        <div class="hearth"/>
+                                                    </label>
                                                     <span class="tooltipp">add to wishlist</span>
                                                 </button>
 
@@ -203,14 +244,6 @@ li { cursor: pointer; }
 
 @section('additional_js')
 <script type="application/javascript">
-$var = document.getElementById("fav").element.getAttribute("added");
-if($var.valueOf){
-    document.getElementById("heart").style.backgroundColor = "red";
-}
-else{
-
-    document.getElementById("heart").style.color = "blue";
-}
 
 var search = document.location.search.substr(1).split('&');
 

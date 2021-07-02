@@ -34,7 +34,7 @@
                         <div class="form-group row">
                             <i class="far fa-user"></i>
                             <div class="col-xs-10 col-sm-6">
-                                <input id="first-name" type="text" class="form-control" name="first_name" required placeholder="First Name">
+                                <input id="first-name" type="text" class="form-control" name="first_name"  value="{{ old('first_name') }}"  required placeholder="First Name">
                                 @if($errors->has('first_name'))
                                 <div class="error">{{ $errors->first('first_name') }}</div>
                                 @endif
@@ -44,7 +44,7 @@
                         <div class="form-group row">
                             <i class="far fa-user"></i>
                             <div class="col-xs-10 col-sm-6">
-                                <input id="last-name" type="text" class="form-control" name="last_name" required placeholder="Last Name">
+                                <input id="last-name" type="text" class="form-control" name="last_name" value="{{ old('last_name') }}"  required placeholder="Last Name">
                                 @if($errors->has('last_name'))
                                 <div class="error">{{ $errors->first('last_name') }}</div>
                                 @endif
