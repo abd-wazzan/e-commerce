@@ -1,12 +1,22 @@
 @extends('layout.app')
 @section('additional_css')
 <style type="text/css">
-
+.quick-view {
+    top:-15px;
+}
 .add-product{
     display: inline-block !important;
 }
 li { cursor: pointer; }
-
+.add-to-wishlist{
+    padding-right:40px;
+}
+.product-body a{
+color: #468bc5 !important;
+font-weight:initial !important;
+font-family:'Montserrat' !important;
+font-size:12px !important;
+}
 :root {
 --size: 35px;
 --frames: 62;
@@ -92,9 +102,9 @@ background-position-x: calc(var(--size) * (var(--frames) * -1 + 3));
                                         </div>
                                         <div class="product-body">
                                             <p class="product-category">{{$product->category->name}}</p>
-                                            <h3 class="product-name"><a href="#">{{$product->name}}</a></h3>
+                                            <h3 class="product-name">{{$product->name}}</h3>
                                             <h4 class="product-price">${{$product->price}}</h4>
-                                            <a href="{{route('store.show',$product->user->id)}}" class="product-price">{{$product->user->name}}</a>
+                                            <a href="{{route('store.show',$product->user->id)}}" class="product-price">Seller : {{$product->user->name}}</a>
                                             <div class="product-rating">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
@@ -104,7 +114,7 @@ background-position-x: calc(var(--size) * (var(--frames) * -1 + 3));
                                             </div>
                                             <div class="product-btns">
                                                 {{-- <p>{{json_encode(auth()->user()->favorites->firstWhere('product_id', $product->id))}}</p> --}}
-                                                <button id="fav" class="add-to-wishlist">
+                                                <button class="add-to-wishlist">
                                                     <label class="like">
                                                         <input {{!empty(auth()->user()->favorites->firstWhere('product_id', $product->id))? 'checked' : ''}}  onclick="toggleFavorite({{$product->id}})" class="loveclass" type="checkbox"/>
                                                         <div class="hearth"/>
@@ -145,8 +155,9 @@ background-position-x: calc(var(--size) * (var(--frames) * -1 + 3));
                                         </div>
                                         <div class="product-body">
                                             <p class="product-category">{{$product->category->name}}</p>
-                                            <h3 class="product-name"><a href="#">{{$product->name}}</a></h3>
+                                            <h3 class="product-name">{{$product->name}}</h3>
                                             <h4 class="product-price">${{$product->price}}</h4>
+                                            <a href="{{route('store.show',$product->user->id)}}" class="product-price">Seller : {{$product->user->name}}</a>
                                             <div class="product-rating">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
@@ -154,19 +165,17 @@ background-position-x: calc(var(--size) * (var(--frames) * -1 + 3));
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>
-                                            <div class="product-btns" style="display: inline-flex";>
+                                            <div class="product-btns">
                                                 {{-- <p>{{json_encode(auth()->user()->favorites->firstWhere('product_id', $product->id))}}</p> --}}
-                                                <button added="{{!empty( auth()->user()->favorites->firstWhere('product_id', $product->id) )? 'true' : 'false'}}" onclick="toggleFavorite({{$product->id}})" class="add-to-wishlist">
+                                                <button class="add-to-wishlist">
                                                     <label class="like">
-                                                        <input class="loveclass" type="checkbox"/>
+                                                        <input {{!empty(auth()->user()->favorites->firstWhere('product_id', $product->id))? 'checked' : ''}}  onclick="toggleFavorite({{$product->id}})" class="loveclass" type="checkbox"/>
                                                         <div class="hearth"/>
                                                     </label>
-                                                    <span class="tooltipp">add to wishlist</span>
-                                                </button>
-
-                                                <button onclick="showProduct({{$product->id}})" class="quick-view"><i class="fa fa-eye"></i>
-                                                    <span class="tooltipp">quick view</span>
-                                                </button>
+                                                    <span
+                                                        class="tooltipp">add to wishlist</span></button>
+                                                <button onclick="showProduct({{$product->id}})" class="quick-view"><i class="fa fa-eye"></i><span
+                                                    class="tooltipp">quick view</span></button>
                                             </div>
                                         </div>
                                         <div class="add-to-cart">
@@ -203,26 +212,26 @@ background-position-x: calc(var(--size) * (var(--frames) * -1 + 3));
                             <li>
                                 <div>
                                     <h3>ASUS</h3>
-                                    <span><i class="fas fa-laptop"></i></span>
+                                    <span><i class="fa fa-laptop"></i></span>
                                 </div>
                             </li>
                             <li>
                                 <div>
                                     <h3>DELL</h3>
-                                    <span><i class="fas fa-laptop"></i></span>
+                                    <span><i class="fa fa-laptop"></i></span>
 
                                 </div>
                             </li>
                             <li>
                                 <div>
                                     <h3>Lenovo</h3>
-                                    <span><i class="fas fa-laptop"></i></span>
+                                    <span><i class="fa fa-laptop"></i></span>
                                 </div>
                             </li>
                             <li>
                                 <div>
                                     <h3>Sony</h3>
-                                    <span><i class="fas fa-laptop"></i></span>
+                                    <span><i class="fa fa-laptop"></i></span>
                                 </div>
                             </li>
                         </ul>
@@ -250,7 +259,6 @@ var search = document.location.search.substr(1).split('&');
 function insertParam(key, value) {
     key = encodeURIComponent(key);
     value = encodeURIComponent(value);
-
     // kvp looks like ['key1=value1', 'key2=value2', ...]
     var kvp = search;
     let i=0;
