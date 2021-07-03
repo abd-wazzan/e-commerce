@@ -152,8 +152,8 @@ class ProductController extends Controller
             return back();
         DB::beginTransaction();
         $this->product->softDeleteData(['id' => $id]);
-        $favorite->softDeleteData(['product_id' => $id]);
-        $cart->softDeleteData(['product_id' => $id]);
+        $favorite->where(['product_id' => $id])->delete();
+        $cart->where(['product_id' => $id])->delete();
         DB::commit();
         return redirect()->route('home');
     }
