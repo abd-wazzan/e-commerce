@@ -41,34 +41,48 @@
     <script src="{{ asset('js/jquery.zoom.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
 
-<script>
-function toggleCart(product_id){
-    var url = '{{ route("cart.toggle", ":id") }}';
-    url = url.replace(':id', product_id);
-$.ajax({
-    url: url,
-    method: "get",
-    cache: false,
-    contentType: false,
-    processData: false,
-    dataType: 'json'
-});
-}
+    <script>
+        function toggleCart(product_id){
+            var url = '{{ route("cart.toggle", ":id") }}';
+            url = url.replace(':id', product_id);
+        $.ajax({
+            url: url,
+            method: "get",
+            cache: false,
+            contentType: false,
+            processData: false,
+            dataType: 'json'
+        }).done(function(response) {
+         console.log("added to card");
+         location.reload();
+        }).fail(function(e) {
+            alert("An error occurred. Please try again.");
+        }).always(function() {
+
+        });
+        }
 
 
-function toggleFavorite(product_id){
-    var url = '{{ route("favorite.toggle", ":id") }}';
-    url = url.replace(':id', product_id);
-$.ajax({
-    url: url,
-    method: "get",
-    cache: false,
-    contentType: false,
-    processData: false,
-    dataType: 'json'
-});
-}
+        function toggleFavorite(product_id){
+            var url = '{{ route("favorite.toggle", ":id") }}';
+            url = url.replace(':id', product_id);
+        $.ajax({
+            url: url,
+            method: "get",
+            cache: false,
+            contentType: false,
+            processData: false,
+            dataType: 'json'
+        }).done(function(response) {
+         console.log("added to favorite");
+         location.reload();
+        }).fail(function(e) {
+            alert("An error occurred. Please try again.");
+        }).always(function() {
 
-</script>
+        });
+        }
+
+        </script>
     @yield('additional_js')
 </html>
