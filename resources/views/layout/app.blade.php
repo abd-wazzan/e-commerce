@@ -52,7 +52,7 @@ $.ajax({
     contentType: false,
     processData: false,
     dataType: 'json'
-});
+}).always(location.reload());
 }
 
 
@@ -66,7 +66,7 @@ $.ajax({
     contentType: false,
     processData: false,
     dataType: 'json'
-});
+}).always(location.reload());
 }
 
 </script>
