@@ -7,6 +7,8 @@ use App\Helpers\StringConstants;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Product\Product\StoreProductRequest;
 use App\Models\Category\CategorySpec;
+use App\Models\Client\Cart;
+use App\Models\Client\Favorite;
 use App\Models\Product\Product;
 use App\Models\Product\ProductOption;
 use App\Models\Product\ProductSpec;
@@ -142,12 +144,17 @@ class ProductController extends Controller
         return view('product.view_store', compact('products'));
     }
 
-    public function delete(Request $request, $id)
+    public function delete(Request $request, $id, Favorite $favorite, Cart $cart)
     {
+
         $product = $this->product->getData(['user_id' => $request->user()->id, 'id' => $id]);
         if (empty($product))
             return back();
+        DB::beginTransaction();
         $this->product->softDeleteData(['id' => $id]);
+        $favorite->softDeleteData(['product_id' => $id]);
+        $cart->softDeleteData(['product_id' => $id]);
+        DB::commit();
         return redirect()->route('home');
     }
 }
