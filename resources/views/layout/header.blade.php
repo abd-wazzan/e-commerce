@@ -88,7 +88,7 @@
                             <!-- Add a product -->
                             <div class="add-product">
                                 <a href="{{route('chose-cat')}}">
-                                    <i class="fas fa-cart-plus"></i>
+                                    <i class="fa fa-cart-plus"></i>
                                     <span>Add product</span>
                                 </a>
                             </div>
@@ -97,7 +97,7 @@
                             <!-- Add a product -->
                             <div class="add-product">
                                 <a href="{{ route('logout') }}">
-                                    <i class="fas fa-sign-out-alt"></i>
+                                    <i class="fa fa-sign-out"></i>
                                     <span>Logout</span>
                                 </a>
                             </div>

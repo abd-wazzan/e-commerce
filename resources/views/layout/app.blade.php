@@ -52,12 +52,6 @@ $.ajax({
     contentType: false,
     processData: false,
     dataType: 'json'
-}).done(function(response) {
- console.log("added to card");
-}).fail(function(e) {
-    alert("An error occurred. Please try again.");
-}).always(function() {
-
 });
 }
 
@@ -72,12 +66,6 @@ $.ajax({
     contentType: false,
     processData: false,
     dataType: 'json'
-}).done(function(response) {
- console.log("added to favorite");
-}).fail(function(e) {
-    alert("An error occurred. Please try again.");
-}).always(function() {
-
 });
 }
 
