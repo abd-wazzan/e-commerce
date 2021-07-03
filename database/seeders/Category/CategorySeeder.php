@@ -73,7 +73,7 @@ class CategorySeeder extends Seeder
             ],
             [
                 'id' => 8,
-                'name' => 'Catenaries',
+                'name' => 'Earrings',
                 'category_id' => 3,
                 'created_at' => $now,
                 'updated_at' => $now,

@@ -102,7 +102,95 @@ class CategorySpecSeeder extends Seeder
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
-            //
+            //Tshirt spec
+            [
+                'id' => 12,
+                'category_id' => 6,
+                'name' => 'Fabric',//type of clouthes
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => 13,
+                'category_id' => 6,
+                'name' => 'Size',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => 14,
+                'category_id' => 6,
+                'name' => 'Color',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            ///// pants spec
+            [
+
+                'id' => 15,
+                'category_id' => 7,
+                'name' => 'Fabric',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => 16,
+                'category_id' => 7,
+                'name' => 'Size',//type of clouthes
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => 17,
+                'category_id' => 7,
+                'name' => 'Color',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => 18,
+                'category_id' => 7,
+                'name' => 'Market',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+           ///// Earrings Type
+
+           [
+            'id' => 19,
+            'category_id' => 8,
+            'name' => 'Size',
+            'created_at' => $now,
+            'updated_at' => $now,
+
+           ],
+           [
+            'id' => 20,
+            'category_id' => 8,
+            'name' => 'Type',
+            'created_at' => $now,
+            'updated_at' => $now,
+
+           ],
+         /////  ring Type
+           [
+            'id' => 21,
+            'category_id' => 9,
+            'name' => 'Size',
+            'created_at' => $now,
+            'updated_at' => $now,
+
+           ],
+           [
+            'id' => 22,
+            'category_id' => 9,
+            'name' => 'Type',
+            'created_at' => $now,
+            'updated_at' => $now,
+
+           ],
+
+
         ];
 
         DB::table('category_specs')->insert($specs);
