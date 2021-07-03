@@ -112,8 +112,10 @@ a.trash:hover{
                                                         class="tooltipp">add to wishlist</span></button>
                                                 <button onclick="showProduct({{$product->id}})" class="quick-view"><i class="fa fa-eye"></i><span
                                                     class="tooltipp">quick view</span></button>
+                                                    @if(auth()->user()->id == $product->user->id)
                                                 <button class="quick-view"><a href="{{route('product.delete' , $product->id)}}" class="quick-view trash"><i class="fa fa-trash"></i><span
                                                     class="tooltipp">delete product</span></a></button>
+                                                    @endif
                                             </div>
                                         </div>
                                         <div class="add-to-cart">
