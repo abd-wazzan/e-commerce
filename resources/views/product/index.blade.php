@@ -98,7 +98,7 @@ background-position-x: calc(var(--size) * (var(--frames) * -1 + 3));
                                     <!-- product -->
                                     <div class="product">
                                         <div class="product-img">
-                                            <img src={{$product->img ?? "./img/default-product.jpg"}} width="250" height="250" alt="">
+                                            <img src={{$product->img ?? "./img/default-product.jpg"}} width="200" height="200" alt="">
                                         </div>
                                         <div class="product-body">
                                             <p class="product-category">{{$product->category->name}}</p>
@@ -151,7 +151,7 @@ background-position-x: calc(var(--size) * (var(--frames) * -1 + 3));
                                     <!-- product -->
                                     <div class="product">
                                         <div class="product-img">
-                                            <img src={{$product->img ?? "./img/default-product.jpg"}} width="250" height="250" alt="">
+                                            <img src={{$product->img ?? "./img/default-product.jpg"}} width="200" height="200" alt="">
                                         </div>
                                         <div class="product-body">
                                             <p class="product-category">{{$product->category->name}}</p>
