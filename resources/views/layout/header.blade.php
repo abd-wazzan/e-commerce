@@ -35,7 +35,7 @@
                                                 <img src="{{$favorite->product->img ?? "./img/product02.png"}}" alt="">
                                             </div>
                                     <div class="product-body">
-                                        <h3 class="product-name"><h4>{{$favorite->product->name}}</h4></h3>
+                                        <h3 class="product-name"><h4 style="text-transform: uppercase">{{$favorite->product->name}}</h4></h3>
                                     </div>
                                     <button onclick="toggleFavorite({{$favorite->product_id}})" class="delete"><i class="fa fa-close"></i></button>
                                     </div>
@@ -60,7 +60,7 @@
                                                     <img src="{{$cart->product->img ?? "./img/product02.png"}}" alt="">
                                                 </div>
                                                 <div class="product-body">
-                                                    <h3 class="product-name"><h4>{{$cart->product->name}}</h4></h3>
+                                                    <h3 class="product-name"><h4 style="text-transform: uppercase" >{{$cart->product->name}}</h4></h3>
                                                     <h4 class="product-price">${{$cart->product->price}}</h4>
                                                     {{-- <span class="qty">{{$cart->qty}}x</span> --}}
                                                 </div>
